@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_KingKingKing_MessagesExtensionVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_KingKingKing_MessagesExtensionVersionString[];
+FOUNDATION_EXPORT double Pods_Coronation_MessagesVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Coronation_MessagesVersionString[];
 

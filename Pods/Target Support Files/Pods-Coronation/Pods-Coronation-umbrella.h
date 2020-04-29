@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_KingKingKingVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_KingKingKingVersionString[];
+FOUNDATION_EXPORT double Pods_CoronationVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CoronationVersionString[];
 
