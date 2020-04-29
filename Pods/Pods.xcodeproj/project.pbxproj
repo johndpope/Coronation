@@ -1,0 +1,1045 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0205A0576AAC8E29185FC17238BE9120 /* Dispatch+BrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E6679D17E1455FA389862049C434A /* Dispatch+BrightFutures.swift */; };
+		043E2D1661A68E2E0E5DAC54F29CCE2E /* MutableAsyncType+ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28ACE0C209F8AC0F9957E10CE159AFF /* MutableAsyncType+ResultType.swift */; };
+		05EF7E0EA841554E7CA8C2FEC10D9987 /* BrightFutures-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B9669CBA566EC13CFDB25E5873BB8D2 /* BrightFutures-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10538D0D246824C2E3E11552BAAFE6FA /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21AF2A3E532D134BD0C9F48EE41E52 /* ResultProtocol.swift */; };
+		1407D81878FB19F41CCD3CC683F28B65 /* BrightFutures-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A006A86EC73A2AA8369F20C94B9C5F55 /* BrightFutures-dummy.m */; };
+		181AC0BD7CD59880E117A4780F42CCF8 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EB68ACBF9EA475E27DC9A2AFD375C /* Future.swift */; };
+		21145222492BCCD2CB607E36ADCD9D22 /* AsyncType+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46B65146767FD48729229C1918B601 /* AsyncType+Debug.swift */; };
+		213F68A4F5ABD7ED016FF11FF0C21C03 /* AsyncType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB345EECCF42075CC22EAA7EAB561000 /* AsyncType.swift */; };
+		25E2D085A7B457B021A887CF79BCAFBE /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AFFCECD741C4285D42F6D075DEF27 /* Promise.swift */; };
+		2EC85895A0A83FEF4EEA9C293EED6397 /* KYShutterButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FE7424B51D219A5C345EF0CF14CD46 /* KYShutterButton-dummy.m */; };
+		38BB8A742B6BCECB82FE2697937FE0DB /* SequenceType+BrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0DFA7EEE396E9262CDABE84868772 /* SequenceType+BrightFutures.swift */; };
+		3D0A812EA877569E37ECAE51DE13553A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3DF0FB49B9A83DA2200CA33C6B09661D /* MutableAsyncType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE4D7C15F68B768E5DC6E0B4738F354 /* MutableAsyncType.swift */; };
+		42E349B33004E2A4521DF3563348A87A /* NSOperationQueue+BrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8358603D83FAED78C47166FAEF4F28 /* NSOperationQueue+BrightFutures.swift */; };
+		4488E061991B70D1608C06D2EF16395A /* Pods-KingKingKing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D95878978833E0651D6EE9419C2555B /* Pods-KingKingKing-dummy.m */; };
+		493878F30ED51E44F02796C76F44AD1A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D80A1C9BB5C5BB18E4445B2378623F /* Errors.swift */; };
+		4B96A6E8120DDF284D25FBC9B6997D1D /* KYShutterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2CB79D035544F15003E0517ED013B4 /* KYShutterButton.swift */; };
+		4D66CEC6BA6AF0842D4C386848F37A10 /* AsyncType+ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EFC1268524A257FFA78105D17F0BD /* AsyncType+ResultType.swift */; };
+		4FF211146E4FFDEDD59FF88B0F40BF73 /* InvalidationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07686F4D269E50B36F79BF12E36B8010 /* InvalidationToken.swift */; };
+		517CB533C215AE2BC143F790FE3E3A3D /* Pods-KingKingKing MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D3651AB49361D061B174B45F3BC1C7 /* Pods-KingKingKing MessagesExtension-dummy.m */; };
+		57658A7DD932D4D18AD588B9E71D740F /* Result+BrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853ED6564575EE48D49BCC9C14DC3D66 /* Result+BrightFutures.swift */; };
+		867C02CBF9A92D942463CBF7894C8178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		9954FE9768DF9C04ABE9536A9F8BD3C9 /* KYShutterButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56E920AD5E9DD656D96DB359271D3C45 /* KYShutterButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9AAE70C52A64352DD05356445E277168 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8199DD122B62456AAEB02988FAE8F /* Async.swift */; };
+		B2AD13B604EDD7B91360F7A7CC72261F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		BD8ACF3A487648463E22DF4C9F2F7C4A /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBE48DB57DD4FF441B781A298EDA22 /* ExecutionContext.swift */; };
+		D1D2DF1A353313BC74B76C0B3E55BEF9 /* Pods-KingKingKing MessagesExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E932756869CCAEFF1ADC438E53FCB39 /* Pods-KingKingKing MessagesExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE60E0AC047C8AB2D6DC1FADE20E1A3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		EEF4CCC692543C22E1AAD63DBB2A8770 /* Pods-KingKingKing-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 987EC899B447468F32746C40492C42C4 /* Pods-KingKingKing-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21DB835801A6CD923253FB55410B3368 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9A4299788AF53432D49DA779EE4F708;
+			remoteInfo = BrightFutures;
+		};
+		5ECC91F42CF2E0804F4A2C2A62B7ADE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAF281EA4539F8ACC1C81CEEB2DF713E;
+			remoteInfo = KYShutterButton;
+		};
+		B48690B2609765C33CA9C1C101AA7CB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9A4299788AF53432D49DA779EE4F708;
+			remoteInfo = BrightFutures;
+		};
+		D26FA7D528E19DFDA34C9472EE2C8C87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAF281EA4539F8ACC1C81CEEB2DF713E;
+			remoteInfo = KYShutterButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		019AFFCECD741C4285D42F6D075DEF27 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/BrightFutures/Promise.swift; sourceTree = "<group>"; };
+		07686F4D269E50B36F79BF12E36B8010 /* InvalidationToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvalidationToken.swift; path = Sources/BrightFutures/InvalidationToken.swift; sourceTree = "<group>"; };
+		0B8358603D83FAED78C47166FAEF4F28 /* NSOperationQueue+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSOperationQueue+BrightFutures.swift"; path = "Sources/BrightFutures/NSOperationQueue+BrightFutures.swift"; sourceTree = "<group>"; };
+		0CB39CBCF1C4DDA408F9DF1F24613F4C /* BrightFutures.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BrightFutures.modulemap; sourceTree = "<group>"; };
+		0D95878978833E0651D6EE9419C2555B /* Pods-KingKingKing-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KingKingKing-dummy.m"; sourceTree = "<group>"; };
+		0E06DD20227121A7AC1FBCEBC0E5F60D /* Pods-KingKingKing-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KingKingKing-acknowledgements.markdown"; sourceTree = "<group>"; };
+		16A0C9BFE44025D077C44A61AD2DBF8A /* BrightFutures.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BrightFutures.debug.xcconfig; sourceTree = "<group>"; };
+		1E96DF66A1732AB69385ADCA0A64A6BD /* KYShutterButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KYShutterButton-Info.plist"; sourceTree = "<group>"; };
+		24BA46CB45603D3BF78D3F9EDE94BD60 /* KYShutterButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYShutterButton.release.xcconfig; sourceTree = "<group>"; };
+		24D80A1C9BB5C5BB18E4445B2378623F /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/BrightFutures/Errors.swift; sourceTree = "<group>"; };
+		254B61B6D598FCED562E347C8FD3D816 /* Pods-KingKingKing MessagesExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KingKingKing MessagesExtension-Info.plist"; sourceTree = "<group>"; };
+		2E932756869CCAEFF1ADC438E53FCB39 /* Pods-KingKingKing MessagesExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KingKingKing MessagesExtension-umbrella.h"; sourceTree = "<group>"; };
+		31D3651AB49361D061B174B45F3BC1C7 /* Pods-KingKingKing MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KingKingKing MessagesExtension-dummy.m"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4BA74B589ACFAF3355E513AEEDC3D3EA /* BrightFutures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BrightFutures.release.xcconfig; sourceTree = "<group>"; };
+		4DA140F8E5A84846905C2F6B8A2D20A7 /* Pods-KingKingKing-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KingKingKing-frameworks.sh"; sourceTree = "<group>"; };
+		4FF0DFA7EEE396E9262CDABE84868772 /* SequenceType+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SequenceType+BrightFutures.swift"; path = "Sources/BrightFutures/SequenceType+BrightFutures.swift"; sourceTree = "<group>"; };
+		5371867AA0EDC92F509547B5CC4A61CA /* Pods-KingKingKing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KingKingKing.debug.xcconfig"; sourceTree = "<group>"; };
+		53D5102E98F18AEF6C23C33CE884E7B7 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BrightFutures.framework; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E920AD5E9DD656D96DB359271D3C45 /* KYShutterButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYShutterButton-umbrella.h"; sourceTree = "<group>"; };
+		5EA8199DD122B62456AAEB02988FAE8F /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/BrightFutures/Async.swift; sourceTree = "<group>"; };
+		63E7E4E9904DBBD9FECA8E987AD497B2 /* Pods-KingKingKing.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KingKingKing.modulemap"; sourceTree = "<group>"; };
+		6A46B65146767FD48729229C1918B601 /* AsyncType+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AsyncType+Debug.swift"; path = "Sources/BrightFutures/AsyncType+Debug.swift"; sourceTree = "<group>"; };
+		74FE7424B51D219A5C345EF0CF14CD46 /* KYShutterButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYShutterButton-dummy.m"; sourceTree = "<group>"; };
+		7A2CB79D035544F15003E0517ED013B4 /* KYShutterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYShutterButton.swift; path = KYShutterButton/Classes/KYShutterButton.swift; sourceTree = "<group>"; };
+		7A98B600BBAD552B352E16376CD6FB87 /* BrightFutures-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BrightFutures-prefix.pch"; sourceTree = "<group>"; };
+		7B9669CBA566EC13CFDB25E5873BB8D2 /* BrightFutures-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BrightFutures-umbrella.h"; sourceTree = "<group>"; };
+		83745736D5A374FD81C84727D9A6FCB7 /* Pods-KingKingKing-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KingKingKing-Info.plist"; sourceTree = "<group>"; };
+		853ED6564575EE48D49BCC9C14DC3D66 /* Result+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+BrightFutures.swift"; path = "Sources/BrightFutures/Result+BrightFutures.swift"; sourceTree = "<group>"; };
+		86427D212F77BBB3671DE6145B7B7BC4 /* Pods-KingKingKing MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KingKingKing MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		88A3747F1F12944876453787207E86A4 /* Pods-KingKingKing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KingKingKing.release.xcconfig"; sourceTree = "<group>"; };
+		8A3AC4996389DFE95A5C0D6699D1CBD4 /* Pods-KingKingKing MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KingKingKing MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		91F757460E1E9C7DAC0F1FF5E97D400A /* Pods-KingKingKing MessagesExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KingKingKing MessagesExtension.modulemap"; sourceTree = "<group>"; };
+		970E6679D17E1455FA389862049C434A /* Dispatch+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dispatch+BrightFutures.swift"; path = "Sources/BrightFutures/Dispatch+BrightFutures.swift"; sourceTree = "<group>"; };
+		987EC899B447468F32746C40492C42C4 /* Pods-KingKingKing-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KingKingKing-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A006A86EC73A2AA8369F20C94B9C5F55 /* BrightFutures-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BrightFutures-dummy.m"; sourceTree = "<group>"; };
+		A28ACE0C209F8AC0F9957E10CE159AFF /* MutableAsyncType+ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MutableAsyncType+ResultType.swift"; path = "Sources/BrightFutures/MutableAsyncType+ResultType.swift"; sourceTree = "<group>"; };
+		A29C9DC9BE54FE15F31A37F5D9909C02 /* KYShutterButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYShutterButton-prefix.pch"; sourceTree = "<group>"; };
+		A50DEED3A76189800C2D2101567A5A01 /* BrightFutures-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BrightFutures-Info.plist"; sourceTree = "<group>"; };
+		A76EB68ACBF9EA475E27DC9A2AFD375C /* Future.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Future.swift; path = Sources/BrightFutures/Future.swift; sourceTree = "<group>"; };
+		AA2C4C7724815C14899CF478DC1667C5 /* KYShutterButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYShutterButton.debug.xcconfig; sourceTree = "<group>"; };
+		B217DCAD7EE885B1D0B0AB4C74FA0FE6 /* Pods-KingKingKing MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KingKingKing MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		BB345EECCF42075CC22EAA7EAB561000 /* AsyncType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncType.swift; path = Sources/BrightFutures/AsyncType.swift; sourceTree = "<group>"; };
+		BD9EFC1268524A257FFA78105D17F0BD /* AsyncType+ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AsyncType+ResultType.swift"; path = "Sources/BrightFutures/AsyncType+ResultType.swift"; sourceTree = "<group>"; };
+		CC92AA8BE72A81C5449663D2FD96A62B /* KYShutterButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KYShutterButton.modulemap; sourceTree = "<group>"; };
+		D6FBE48DB57DD4FF441B781A298EDA22 /* ExecutionContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExecutionContext.swift; path = Sources/BrightFutures/ExecutionContext.swift; sourceTree = "<group>"; };
+		D7375D5364D0513825757F9243C0EC51 /* Pods-KingKingKing-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KingKingKing-acknowledgements.plist"; sourceTree = "<group>"; };
+		DA52E0D8AEC9DF06006A4A4855E947DC /* Pods_KingKingKing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KingKingKing.framework; path = "Pods-KingKingKing.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE4D7C15F68B768E5DC6E0B4738F354 /* MutableAsyncType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutableAsyncType.swift; path = Sources/BrightFutures/MutableAsyncType.swift; sourceTree = "<group>"; };
+		EF49B0387473146A4F6C09AC22B1922E /* KYShutterButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYShutterButton.framework; path = KYShutterButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6449B80B4CB7A27B0539DA4AF37AC6A /* Pods-KingKingKing MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KingKingKing MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F65EEF6A17839AC97F54440DAAFEB6CA /* Pods_KingKingKing_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KingKingKing_MessagesExtension.framework; path = "Pods-KingKingKing MessagesExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA21AF2A3E532D134BD0C9F48EE41E52 /* ResultProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultProtocol.swift; path = Sources/BrightFutures/ResultProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29302EDDB1F1E183877687A13ABC9714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				867C02CBF9A92D942463CBF7894C8178 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779D82BB3A92A3B50C6F4CDED201B068 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE60E0AC047C8AB2D6DC1FADE20E1A3C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F16AD6F1E6C7B154AA89727121F445B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2AD13B604EDD7B91360F7A7CC72261F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F09177502BB9F95B41AD06D3637825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0A812EA877569E37ECAE51DE13553A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00199EDF2B2533741CBE7A74F0C6EF1F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CB39CBCF1C4DDA408F9DF1F24613F4C /* BrightFutures.modulemap */,
+				A006A86EC73A2AA8369F20C94B9C5F55 /* BrightFutures-dummy.m */,
+				A50DEED3A76189800C2D2101567A5A01 /* BrightFutures-Info.plist */,
+				7A98B600BBAD552B352E16376CD6FB87 /* BrightFutures-prefix.pch */,
+				7B9669CBA566EC13CFDB25E5873BB8D2 /* BrightFutures-umbrella.h */,
+				16A0C9BFE44025D077C44A61AD2DBF8A /* BrightFutures.debug.xcconfig */,
+				4BA74B589ACFAF3355E513AEEDC3D3EA /* BrightFutures.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BrightFutures";
+			sourceTree = "<group>";
+		};
+		04078C007B286C172256CC716A3E1B04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90779C50BDFF826FFDBB77DC01433C54 /* BrightFutures */,
+				56EDC60FF156FB74F9AACB1E5A2073F7 /* KYShutterButton */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		114F78910C4AA5DAD904F50F587A0555 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E7C3AD2EC4735B28A2B4A5B4DF73291 /* Pods-KingKingKing */,
+				37FF6D2F4873F8FC350141A6CE2D2394 /* Pods-KingKingKing MessagesExtension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		37FF6D2F4873F8FC350141A6CE2D2394 /* Pods-KingKingKing MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				91F757460E1E9C7DAC0F1FF5E97D400A /* Pods-KingKingKing MessagesExtension.modulemap */,
+				F6449B80B4CB7A27B0539DA4AF37AC6A /* Pods-KingKingKing MessagesExtension-acknowledgements.markdown */,
+				B217DCAD7EE885B1D0B0AB4C74FA0FE6 /* Pods-KingKingKing MessagesExtension-acknowledgements.plist */,
+				31D3651AB49361D061B174B45F3BC1C7 /* Pods-KingKingKing MessagesExtension-dummy.m */,
+				254B61B6D598FCED562E347C8FD3D816 /* Pods-KingKingKing MessagesExtension-Info.plist */,
+				2E932756869CCAEFF1ADC438E53FCB39 /* Pods-KingKingKing MessagesExtension-umbrella.h */,
+				8A3AC4996389DFE95A5C0D6699D1CBD4 /* Pods-KingKingKing MessagesExtension.debug.xcconfig */,
+				86427D212F77BBB3671DE6145B7B7BC4 /* Pods-KingKingKing MessagesExtension.release.xcconfig */,
+			);
+			name = "Pods-KingKingKing MessagesExtension";
+			path = "Target Support Files/Pods-KingKingKing MessagesExtension";
+			sourceTree = "<group>";
+		};
+		3D9442CEDBE4D5C5F1D6B49EA457A568 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53D5102E98F18AEF6C23C33CE884E7B7 /* BrightFutures.framework */,
+				EF49B0387473146A4F6C09AC22B1922E /* KYShutterButton.framework */,
+				DA52E0D8AEC9DF06006A4A4855E947DC /* Pods_KingKingKing.framework */,
+				F65EEF6A17839AC97F54440DAAFEB6CA /* Pods_KingKingKing_MessagesExtension.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E7C3AD2EC4735B28A2B4A5B4DF73291 /* Pods-KingKingKing */ = {
+			isa = PBXGroup;
+			children = (
+				63E7E4E9904DBBD9FECA8E987AD497B2 /* Pods-KingKingKing.modulemap */,
+				0E06DD20227121A7AC1FBCEBC0E5F60D /* Pods-KingKingKing-acknowledgements.markdown */,
+				D7375D5364D0513825757F9243C0EC51 /* Pods-KingKingKing-acknowledgements.plist */,
+				0D95878978833E0651D6EE9419C2555B /* Pods-KingKingKing-dummy.m */,
+				4DA140F8E5A84846905C2F6B8A2D20A7 /* Pods-KingKingKing-frameworks.sh */,
+				83745736D5A374FD81C84727D9A6FCB7 /* Pods-KingKingKing-Info.plist */,
+				987EC899B447468F32746C40492C42C4 /* Pods-KingKingKing-umbrella.h */,
+				5371867AA0EDC92F509547B5CC4A61CA /* Pods-KingKingKing.debug.xcconfig */,
+				88A3747F1F12944876453787207E86A4 /* Pods-KingKingKing.release.xcconfig */,
+			);
+			name = "Pods-KingKingKing";
+			path = "Target Support Files/Pods-KingKingKing";
+			sourceTree = "<group>";
+		};
+		56EDC60FF156FB74F9AACB1E5A2073F7 /* KYShutterButton */ = {
+			isa = PBXGroup;
+			children = (
+				7A2CB79D035544F15003E0517ED013B4 /* KYShutterButton.swift */,
+				6BB548B1FB9242E50DE92C7EAAF404BD /* Support Files */,
+			);
+			name = KYShutterButton;
+			path = KYShutterButton;
+			sourceTree = "<group>";
+		};
+		6BB548B1FB9242E50DE92C7EAAF404BD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC92AA8BE72A81C5449663D2FD96A62B /* KYShutterButton.modulemap */,
+				74FE7424B51D219A5C345EF0CF14CD46 /* KYShutterButton-dummy.m */,
+				1E96DF66A1732AB69385ADCA0A64A6BD /* KYShutterButton-Info.plist */,
+				A29C9DC9BE54FE15F31A37F5D9909C02 /* KYShutterButton-prefix.pch */,
+				56E920AD5E9DD656D96DB359271D3C45 /* KYShutterButton-umbrella.h */,
+				AA2C4C7724815C14899CF478DC1667C5 /* KYShutterButton.debug.xcconfig */,
+				24BA46CB45603D3BF78D3F9EDE94BD60 /* KYShutterButton.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KYShutterButton";
+			sourceTree = "<group>";
+		};
+		90779C50BDFF826FFDBB77DC01433C54 /* BrightFutures */ = {
+			isa = PBXGroup;
+			children = (
+				5EA8199DD122B62456AAEB02988FAE8F /* Async.swift */,
+				BB345EECCF42075CC22EAA7EAB561000 /* AsyncType.swift */,
+				6A46B65146767FD48729229C1918B601 /* AsyncType+Debug.swift */,
+				BD9EFC1268524A257FFA78105D17F0BD /* AsyncType+ResultType.swift */,
+				970E6679D17E1455FA389862049C434A /* Dispatch+BrightFutures.swift */,
+				24D80A1C9BB5C5BB18E4445B2378623F /* Errors.swift */,
+				D6FBE48DB57DD4FF441B781A298EDA22 /* ExecutionContext.swift */,
+				A76EB68ACBF9EA475E27DC9A2AFD375C /* Future.swift */,
+				07686F4D269E50B36F79BF12E36B8010 /* InvalidationToken.swift */,
+				DFE4D7C15F68B768E5DC6E0B4738F354 /* MutableAsyncType.swift */,
+				A28ACE0C209F8AC0F9957E10CE159AFF /* MutableAsyncType+ResultType.swift */,
+				0B8358603D83FAED78C47166FAEF4F28 /* NSOperationQueue+BrightFutures.swift */,
+				019AFFCECD741C4285D42F6D075DEF27 /* Promise.swift */,
+				853ED6564575EE48D49BCC9C14DC3D66 /* Result+BrightFutures.swift */,
+				FA21AF2A3E532D134BD0C9F48EE41E52 /* ResultProtocol.swift */,
+				4FF0DFA7EEE396E9262CDABE84868772 /* SequenceType+BrightFutures.swift */,
+				00199EDF2B2533741CBE7A74F0C6EF1F /* Support Files */,
+			);
+			name = BrightFutures;
+			path = BrightFutures;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				04078C007B286C172256CC716A3E1B04 /* Pods */,
+				3D9442CEDBE4D5C5F1D6B49EA457A568 /* Products */,
+				114F78910C4AA5DAD904F50F587A0555 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		09C83C3627AEFABDB12D76DAAD6C7B16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1D2DF1A353313BC74B76C0B3E55BEF9 /* Pods-KingKingKing MessagesExtension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1373667EC95139DE51149747BFF62EA5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EF7E0EA841554E7CA8C2FEC10D9987 /* BrightFutures-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D2A16F128081E321AB509C22075430 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF4CCC692543C22E1AAD63DBB2A8770 /* Pods-KingKingKing-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0091BB9C0737647DE70563E2F056BA9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9954FE9768DF9C04ABE9536A9F8BD3C9 /* KYShutterButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2DDE205F73E508C066A2AC2EC7912A7E /* Pods-KingKingKing MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E6C0378E7F7B73BED1E0F4214AC22D5 /* Build configuration list for PBXNativeTarget "Pods-KingKingKing MessagesExtension" */;
+			buildPhases = (
+				09C83C3627AEFABDB12D76DAAD6C7B16 /* Headers */,
+				42241C36ACAD408C4596B454A4B55544 /* Sources */,
+				779D82BB3A92A3B50C6F4CDED201B068 /* Frameworks */,
+				0178F62C7B79870EEF7091C182906A9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BDF65F874FCEC21B89440D0F6AF3D62 /* PBXTargetDependency */,
+				5D5DA79E7C09126EEA4F9849551289FE /* PBXTargetDependency */,
+			);
+			name = "Pods-KingKingKing MessagesExtension";
+			productName = "Pods-KingKingKing MessagesExtension";
+			productReference = F65EEF6A17839AC97F54440DAAFEB6CA /* Pods_KingKingKing_MessagesExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7394C55D7EC9FFAF11FD6E9696B805B1 /* Pods-KingKingKing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A34ABE932DFE789AD954F374A15B4F1 /* Build configuration list for PBXNativeTarget "Pods-KingKingKing" */;
+			buildPhases = (
+				14D2A16F128081E321AB509C22075430 /* Headers */,
+				F69972B1441C9B9678D95929E53C9CFD /* Sources */,
+				A1F09177502BB9F95B41AD06D3637825 /* Frameworks */,
+				82E55A0B6EC6C20E13A220A7A3A4903D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32F070D8B46F5A9A4D5FF5E2EB252B6B /* PBXTargetDependency */,
+				D96C9D08D7814DBE258A6EAC9B9B1C20 /* PBXTargetDependency */,
+			);
+			name = "Pods-KingKingKing";
+			productName = "Pods-KingKingKing";
+			productReference = DA52E0D8AEC9DF06006A4A4855E947DC /* Pods_KingKingKing.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A9A4299788AF53432D49DA779EE4F708 /* BrightFutures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51305422EAA97289750F9D61B34FAB0B /* Build configuration list for PBXNativeTarget "BrightFutures" */;
+			buildPhases = (
+				1373667EC95139DE51149747BFF62EA5 /* Headers */,
+				E284E73D3E314275B35B8AAC6CC067BF /* Sources */,
+				29302EDDB1F1E183877687A13ABC9714 /* Frameworks */,
+				ACC0F4DC6FC912ED3B9FA82639351A5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrightFutures;
+			productName = BrightFutures;
+			productReference = 53D5102E98F18AEF6C23C33CE884E7B7 /* BrightFutures.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AAF281EA4539F8ACC1C81CEEB2DF713E /* KYShutterButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18EBACEAB49C955FEFD24ECED49E0452 /* Build configuration list for PBXNativeTarget "KYShutterButton" */;
+			buildPhases = (
+				D0091BB9C0737647DE70563E2F056BA9 /* Headers */,
+				1EAD22663AC42C28FABC64C7446220D7 /* Sources */,
+				9F16AD6F1E6C7B154AA89727121F445B /* Frameworks */,
+				3236D06849965DCCE18C7A4A09B59467 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYShutterButton;
+			productName = KYShutterButton;
+			productReference = EF49B0387473146A4F6C09AC22B1922E /* KYShutterButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 3D9442CEDBE4D5C5F1D6B49EA457A568 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9A4299788AF53432D49DA779EE4F708 /* BrightFutures */,
+				AAF281EA4539F8ACC1C81CEEB2DF713E /* KYShutterButton */,
+				7394C55D7EC9FFAF11FD6E9696B805B1 /* Pods-KingKingKing */,
+				2DDE205F73E508C066A2AC2EC7912A7E /* Pods-KingKingKing MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0178F62C7B79870EEF7091C182906A9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3236D06849965DCCE18C7A4A09B59467 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82E55A0B6EC6C20E13A220A7A3A4903D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACC0F4DC6FC912ED3B9FA82639351A5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EAD22663AC42C28FABC64C7446220D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EC85895A0A83FEF4EEA9C293EED6397 /* KYShutterButton-dummy.m in Sources */,
+				4B96A6E8120DDF284D25FBC9B6997D1D /* KYShutterButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42241C36ACAD408C4596B454A4B55544 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				517CB533C215AE2BC143F790FE3E3A3D /* Pods-KingKingKing MessagesExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E284E73D3E314275B35B8AAC6CC067BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AAE70C52A64352DD05356445E277168 /* Async.swift in Sources */,
+				21145222492BCCD2CB607E36ADCD9D22 /* AsyncType+Debug.swift in Sources */,
+				4D66CEC6BA6AF0842D4C386848F37A10 /* AsyncType+ResultType.swift in Sources */,
+				213F68A4F5ABD7ED016FF11FF0C21C03 /* AsyncType.swift in Sources */,
+				1407D81878FB19F41CCD3CC683F28B65 /* BrightFutures-dummy.m in Sources */,
+				0205A0576AAC8E29185FC17238BE9120 /* Dispatch+BrightFutures.swift in Sources */,
+				493878F30ED51E44F02796C76F44AD1A /* Errors.swift in Sources */,
+				BD8ACF3A487648463E22DF4C9F2F7C4A /* ExecutionContext.swift in Sources */,
+				181AC0BD7CD59880E117A4780F42CCF8 /* Future.swift in Sources */,
+				4FF211146E4FFDEDD59FF88B0F40BF73 /* InvalidationToken.swift in Sources */,
+				043E2D1661A68E2E0E5DAC54F29CCE2E /* MutableAsyncType+ResultType.swift in Sources */,
+				3DF0FB49B9A83DA2200CA33C6B09661D /* MutableAsyncType.swift in Sources */,
+				42E349B33004E2A4521DF3563348A87A /* NSOperationQueue+BrightFutures.swift in Sources */,
+				25E2D085A7B457B021A887CF79BCAFBE /* Promise.swift in Sources */,
+				57658A7DD932D4D18AD588B9E71D740F /* Result+BrightFutures.swift in Sources */,
+				10538D0D246824C2E3E11552BAAFE6FA /* ResultProtocol.swift in Sources */,
+				38BB8A742B6BCECB82FE2697937FE0DB /* SequenceType+BrightFutures.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F69972B1441C9B9678D95929E53C9CFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4488E061991B70D1608C06D2EF16395A /* Pods-KingKingKing-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BDF65F874FCEC21B89440D0F6AF3D62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BrightFutures;
+			target = A9A4299788AF53432D49DA779EE4F708 /* BrightFutures */;
+			targetProxy = 21DB835801A6CD923253FB55410B3368 /* PBXContainerItemProxy */;
+		};
+		32F070D8B46F5A9A4D5FF5E2EB252B6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BrightFutures;
+			target = A9A4299788AF53432D49DA779EE4F708 /* BrightFutures */;
+			targetProxy = B48690B2609765C33CA9C1C101AA7CB3 /* PBXContainerItemProxy */;
+		};
+		5D5DA79E7C09126EEA4F9849551289FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KYShutterButton;
+			target = AAF281EA4539F8ACC1C81CEEB2DF713E /* KYShutterButton */;
+			targetProxy = D26FA7D528E19DFDA34C9472EE2C8C87 /* PBXContainerItemProxy */;
+		};
+		D96C9D08D7814DBE258A6EAC9B9B1C20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KYShutterButton;
+			target = AAF281EA4539F8ACC1C81CEEB2DF713E /* KYShutterButton */;
+			targetProxy = 5ECC91F42CF2E0804F4A2C2A62B7ADE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		058E10F16F42F20FBE7BE9661E1C3EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16A0C9BFE44025D077C44A61AD2DBF8A /* BrightFutures.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BrightFutures/BrightFutures-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BrightFutures/BrightFutures-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BrightFutures/BrightFutures.modulemap";
+				PRODUCT_MODULE_NAME = BrightFutures;
+				PRODUCT_NAME = BrightFutures;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0C265AEA2F044066FF8EE9CD8315B407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BA74B589ACFAF3355E513AEEDC3D3EA /* BrightFutures.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BrightFutures/BrightFutures-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BrightFutures/BrightFutures-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BrightFutures/BrightFutures.modulemap";
+				PRODUCT_MODULE_NAME = BrightFutures;
+				PRODUCT_NAME = BrightFutures;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6CFE329302CBEBB0757175FFCD895379 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A3AC4996389DFE95A5C0D6699D1CBD4 /* Pods-KingKingKing MessagesExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KingKingKing MessagesExtension/Pods-KingKingKing MessagesExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KingKingKing MessagesExtension/Pods-KingKingKing MessagesExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8F91816C6BC3AF9F78A36E86EB71E986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88A3747F1F12944876453787207E86A4 /* Pods-KingKingKing.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KingKingKing/Pods-KingKingKing-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KingKingKing/Pods-KingKingKing.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9748B334031C0D31A7CF15B0689AEF67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5371867AA0EDC92F509547B5CC4A61CA /* Pods-KingKingKing.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KingKingKing/Pods-KingKingKing-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KingKingKing/Pods-KingKingKing.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B30312AF43DDA4F927A2B4350DE7B4F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86427D212F77BBB3671DE6145B7B7BC4 /* Pods-KingKingKing MessagesExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KingKingKing MessagesExtension/Pods-KingKingKing MessagesExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KingKingKing MessagesExtension/Pods-KingKingKing MessagesExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD7538A06AEB2D715FF5B4F60C358215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA2C4C7724815C14899CF478DC1667C5 /* KYShutterButton.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KYShutterButton/KYShutterButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYShutterButton/KYShutterButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KYShutterButton/KYShutterButton.modulemap";
+				PRODUCT_MODULE_NAME = KYShutterButton;
+				PRODUCT_NAME = KYShutterButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFAB0AB2303C164D03AF5B528D866286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24BA46CB45603D3BF78D3F9EDE94BD60 /* KYShutterButton.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KYShutterButton/KYShutterButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYShutterButton/KYShutterButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KYShutterButton/KYShutterButton.modulemap";
+				PRODUCT_MODULE_NAME = KYShutterButton;
+				PRODUCT_NAME = KYShutterButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18EBACEAB49C955FEFD24ECED49E0452 /* Build configuration list for PBXNativeTarget "KYShutterButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD7538A06AEB2D715FF5B4F60C358215 /* Debug */,
+				DFAB0AB2303C164D03AF5B528D866286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A34ABE932DFE789AD954F374A15B4F1 /* Build configuration list for PBXNativeTarget "Pods-KingKingKing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9748B334031C0D31A7CF15B0689AEF67 /* Debug */,
+				8F91816C6BC3AF9F78A36E86EB71E986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E6C0378E7F7B73BED1E0F4214AC22D5 /* Build configuration list for PBXNativeTarget "Pods-KingKingKing MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CFE329302CBEBB0757175FFCD895379 /* Debug */,
+				B30312AF43DDA4F927A2B4350DE7B4F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */,
+				7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51305422EAA97289750F9D61B34FAB0B /* Build configuration list for PBXNativeTarget "BrightFutures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058E10F16F42F20FBE7BE9661E1C3EBC /* Debug */,
+				0C265AEA2F044066FF8EE9CD8315B407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

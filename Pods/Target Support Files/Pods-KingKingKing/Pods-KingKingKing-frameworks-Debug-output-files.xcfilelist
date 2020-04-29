@@ -1,0 +1,2 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYShutterButton.framework
