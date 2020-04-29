@@ -28,7 +28,6 @@
 		7F15D718245A1AE5001949EA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F15D6EF245A1AE4001949EA /* CollectionViewCell.xib */; };
 		7F15D719245A1AE5001949EA /* CustomOverlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6F2245A1AE5001949EA /* CustomOverlayModel.swift */; };
 		7F15D71A245A1AE5001949EA /* VirtualFaceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6F3245A1AE5001949EA /* VirtualFaceContent.swift */; };
-		7F15D71B245A1AE5001949EA /* Sloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6F4245A1AE5001949EA /* Sloth.swift */; };
 		7F15D71C245A1AE5001949EA /* VirtualContentUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6F5245A1AE5001949EA /* VirtualContentUpdater.swift */; };
 		7F15D71D245A1AE5001949EA /* CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6F6245A1AE5001949EA /* CustomModel.swift */; };
 		7F15D71E245A1AE5001949EA /* VirtualContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6F8245A1AE5001949EA /* VirtualContentType.swift */; };
@@ -95,7 +94,6 @@
 		7F15D6F0245A1AE4001949EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CollectionViewCell.xib; sourceTree = "<group>"; };
 		7F15D6F2245A1AE5001949EA /* CustomOverlayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayModel.swift; sourceTree = "<group>"; };
 		7F15D6F3245A1AE5001949EA /* VirtualFaceContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualFaceContent.swift; sourceTree = "<group>"; };
-		7F15D6F4245A1AE5001949EA /* Sloth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sloth.swift; sourceTree = "<group>"; };
 		7F15D6F5245A1AE5001949EA /* VirtualContentUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualContentUpdater.swift; sourceTree = "<group>"; };
 		7F15D6F6245A1AE5001949EA /* CustomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModel.swift; sourceTree = "<group>"; };
 		7F15D6F8245A1AE5001949EA /* VirtualContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualContentType.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			children = (
 				7F15D6F2245A1AE5001949EA /* CustomOverlayModel.swift */,
 				7F15D6F3245A1AE5001949EA /* VirtualFaceContent.swift */,
-				7F15D6F4245A1AE5001949EA /* Sloth.swift */,
 				7F15D6F5245A1AE5001949EA /* VirtualContentUpdater.swift */,
 				7F15D6F6245A1AE5001949EA /* CustomModel.swift */,
 			);
@@ -495,7 +492,6 @@
 				7F15D721245A1AE5001949EA /* MessagesViewController.swift in Sources */,
 				7F15D723245A1AE5001949EA /* Constants.swift in Sources */,
 				7F15D70D245A1AE5001949EA /* SceneKitVideoRecorder.swift in Sources */,
-				7F15D71B245A1AE5001949EA /* Sloth.swift in Sources */,
 				7F15D722245A1AE5001949EA /* StatusViewController.swift in Sources */,
 				7F15D716245A1AE5001949EA /* UIImage+VideoRender.swift in Sources */,
 				7F15D70B245A1AE5001949EA /* FileController.swift in Sources */,
