@@ -18,8 +18,20 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>NSPhotoLibraryUsageDescription</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>AR Camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Recording ambiente sound</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Export AR Media</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Export AR Media</string>
+	<key>NSPhotoLibraryUsageDescription - 2</key>
+	<string>Export AR Media</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,17 +68,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Export AR Media</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Recording ambiente sound</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Export AR Media</string>
-	<key>NSPhotoLibraryUsageDescription - 2</key>
-	<string>Export AR Media</string>
-	<key>LSApplicationCategoryType</key>
-	<string>NSPhotoLibraryUsageDescription</string>
-	<key>NSCameraUsageDescription</key>
-	<string>AR Camera</string>
 </dict>
 </plist>
