@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'KingKingKing' do
+target 'Coronation' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -9,7 +9,7 @@ target 'KingKingKing' do
 
 end
 
-target 'KingKingKing MessagesExtension' do
+target 'Coronation Messages' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
