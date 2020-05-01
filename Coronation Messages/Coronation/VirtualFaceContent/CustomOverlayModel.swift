@@ -25,19 +25,25 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
 
     var contentNode: SCNNode?
     var occlusionNode: SCNNode?
+    private var nodeMesh: SCNNode?
 
     required init(dictionary: [String : Any]) {
-
-        guard let resource = dictionary["resource"] as? String, let scaleModel = dictionary["scale"] as? Float else {
+        guard let resource = dictionary["resource"] as? String, let mesh = dictionary["mesh"] as? String , let scaleModel = dictionary["scale"] as? Float else {
             fatalError("missing expected bundle resource")
         }
         guard let url = Bundle.main.url(forResource: resource, withExtension: "scn", subdirectory: "Models.scnassets")
             else { fatalError("missing expected bundle resource") }
         super.init(url: url)!
         load()
+        guard let childMesh = self.childNode(withName: mesh, recursively: true) else {
+            fatalError("missing expected bundle resource")
+        }
+        nodeMesh = childMesh
         scale.x *= scaleModel
         scale.y *= scaleModel
         scale.z *= scaleModel
+        nodeMesh?.morpher?.calculationMode = .normalized
+        nodeMesh?.morpher?.unifiesNormals = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -57,12 +63,12 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
         faceGeometry.firstMaterial?.colorBufferWriteMask = []
         occlusionNode = SCNNode(geometry: faceGeometry)
         contentNode = SCNNode()
-        guard let occlusionNode = occlusionNode else {
+        guard let occlusionNode = occlusionNode, let nodeMesh = nodeMesh else {
             return contentNode
         }
         occlusionNode.renderingOrder = -1
         contentNode?.addChildNode(occlusionNode)
-        contentNode?.addChildNode(self)
+        contentNode?.addChildNode(nodeMesh)
         #endif
         return contentNode
     }
@@ -71,13 +77,23 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
         guard let faceGeometry = occlusionNode?.geometry as? ARSCNFaceGeometry,
             let faceAnchor = anchor as? ARFaceAnchor
             else { return }
+        
         faceGeometry.update(from: faceAnchor.geometry)
+        update(withFaceAnchor: anchor as! ARFaceAnchor)
     }
 
     /// - Tag: ARFaceGeometryBlendShapes
     func update(withFaceAnchor faceAnchor: ARFaceAnchor) {
-
-
+        guard let faceGeometry = occlusionNode?.geometry as? ARSCNFaceGeometry,  let contentNode = contentNode else {
+            return
+        }
+        faceGeometry.update(from: faceAnchor.geometry)
+        let max = faceGeometry.boundingBox.max
+        let scalar: Float = 1.4
+        occlusionNode?.scale = SCNVector3Make(1.0, 1.0, 1.0)
+        nodeMesh?.scale = SCNVector3Make(max.z * scalar, max.z * scalar, max.z * scalar)
+        contentNode.position.y = faceGeometry.boundingSphere.radius
+        contentNode.position.z = -faceGeometry.boundingSphere.radius / 2
     }
 
 }

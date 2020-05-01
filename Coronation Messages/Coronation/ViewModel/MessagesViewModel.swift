@@ -48,13 +48,15 @@ class MessagesViewModel: NSObject {
     }
     
     func createRecorder(scene: ARSCNView) {
+        let scale = UIScreen.main.nativeScale
+        let sceneSize = scene.bounds.size
         let option = SceneKitVideoRecorder.Options(timeScale: 1000,
-                                                   videoSize: CGSize(width: 640, height: 480),
+                                                   videoSize: CGSize(width: sceneSize.width * scale, height: sceneSize.height * scale),
                                                    fps: 60,
                                                    outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mov"),
                                                    audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),
                                                    videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mov"),
-                                                   fileType: AVFileType.mov.rawValue,
+                                                   fileType: AVFileType(rawValue: AVFileType.mov.rawValue),
                                                    codec: AVVideoCodecType.h264.rawValue,
                                                    deleteFileIfExists: true,
                                                    useMicrophone: true,

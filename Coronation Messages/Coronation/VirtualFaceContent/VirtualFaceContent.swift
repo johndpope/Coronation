@@ -12,7 +12,6 @@ import SceneKit
 protocol VirtualFaceContent {
     init(dictionary: [String: Any])
     func update(withFaceAnchor: ARFaceAnchor)
-    func load()
 }
 
 typealias VirtualFaceNode = VirtualFaceContent & SCNNode

@@ -8,7 +8,7 @@ import UIKit
 import SceneKit
 import AVFoundation
 
- extension SceneKitVideoRecorder {
+extension SceneKitVideoRecorder {
   public struct Options {
     public var timeScale: Int32
     public var videoSize: CGSize
@@ -16,44 +16,26 @@ import AVFoundation
     public var outputUrl: URL
     public var audioOnlyUrl: URL
     public var videoOnlyUrl: URL
-    public var fileType: String
+    public var fileType: AVFileType
     public var codec: String
     public var deleteFileIfExists: Bool
     public var useMicrophone: Bool
     public var antialiasingMode: SCNAntialiasingMode
 
-    public init(timeScale: Int32, videoSize: CGSize, fps: Int, outputUrl: URL, audioOnlyUrl: URL, videoOnlyUrl: URL, fileType: String, codec: String, deleteFileIfExists: Bool, useMicrophone: Bool, antialiasingMode:SCNAntialiasingMode) {
-        
-        self.timeScale = timeScale
-        self.videoSize = videoSize
-        self.fps = fps
-        self.outputUrl = outputUrl
-        self.audioOnlyUrl = audioOnlyUrl
-        self.videoOnlyUrl = videoOnlyUrl
-        self.fileType = fileType
-        self.codec = codec
-        self.deleteFileIfExists = deleteFileIfExists
-        self.useMicrophone = useMicrophone
-        self.antialiasingMode = antialiasingMode
-        
-        
-    }
-
-    
     public static var `default`: Options {
       return Options(timeScale: 1000,
                      videoSize: CGSize(width: 720, height: 1280),
                      fps: 60,
-                     outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mov"),
+                     outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mp4"),
                      audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),
-                     videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mov"),
-                     fileType: AVFileType.mov.rawValue,
+                     videoOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "video.mp4"),
+                     fileType: AVFileType.m4v,
                      codec: AVVideoCodecType.h264.rawValue,
                      deleteFileIfExists: true,
                      useMicrophone: true,
                      antialiasingMode: .multisampling4X)
     }
-    
+
     var assetWriterVideoInputSettings: [String : Any] {
       return [
         AVVideoCodecKey: codec,
@@ -61,16 +43,16 @@ import AVFoundation
         AVVideoHeightKey: videoSize.height
       ]
     }
-    
+
     var assetWriterAudioInputSettings: [String : Any] {
       return [
         AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVSampleRateKey: 44100,
+        AVSampleRateKey: 12000,
         AVNumberOfChannelsKey: 1,
         AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
       ]
     }
-    
+
     var sourcePixelBufferAttributes: [String : Any] {
       return [
         kCVPixelBufferPixelFormatTypeKey as String: NSNumber(value: kCVPixelFormatType_32ARGB),
@@ -80,4 +62,3 @@ import AVFoundation
     }
   }
 }
-

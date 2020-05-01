@@ -16,6 +16,7 @@ import KYShutterButton
 
 class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var lblDuration: UILabel!
@@ -28,11 +29,9 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var videoViewContainer: AVPlayerView!
     @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
     var isSupported = true
     var activityViewController: UIActivityViewController?
-    var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     var isRestartExperienceButtonEnabled: Bool {
         get { return restartExperienceButton.isEnabled }
@@ -70,20 +69,19 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             if presentationStyle == .compact {
                 bottomConstraint.constant = 0.0
                 pickerView.isHidden = false
-                collectionView.removeFromSuperview()
-                heightConstraint.constant = 235.0
+                collectionView.isHidden = true
                 activityViewController?.dismiss(animated: true, completion: {
 
                 })
             } else {
-                heightConstraint.constant = 280.0
                 pickerView.isHidden = true
-                bottomConstraint.constant = UIScreen.main.bounds.height - sceneView.frame.size.height - recordButton.frame.size.height - 158
-                view.addSubview(self.collectionView)
-                collectionView.frame = CGRect(x: 0.0, y: bottomConstraint.constant, width: view.frame.size.width, height: view.frame.size.height - bottomConstraint.constant)
+                bottomConstraint.constant = 0.0
+                collectionView.isHidden = false
             }
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.view.layoutIfNeeded()
+            }) { (finished) in
+               self.messagesViewModel.createRecorder(scene: self.sceneView)
             }
         }
     }
@@ -97,7 +95,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         layout.scrollDirection = .vertical
         collectionView.setCollectionViewLayout(layout, animated: true)
         let view = UIView.init()
-        view.frame = CGRect(x: 0, y: pickerView.frame.size.height / 2 - 25, width: 50, height: 50)
+        view.frame = CGRect(x: 0, y: (pickerView.bounds.height / 2) - 66, width: 50, height: 50)
         view.layer.borderColor = Constants.Colors.blueColor.cgColor
         view.layer.cornerRadius = 5.0
         view.layer.borderWidth = 2.0
@@ -106,25 +104,32 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configCollectionAndPicker()
         updateConstraints()
+        configCollectionAndPicker()
         if !ARFaceTrackingConfiguration.isSupported {
             isSupported = false
             hideComponents()
         } else {
             sceneView.allowsCameraControl = false
             sceneView.delegate = messagesViewModel.contentUpdater
-            sceneView.contentMode = .scaleAspectFill
-            sceneView.contentScaleFactor = 1.0
+            sceneView.contentMode = .scaleAspectFit
+            sceneView.contentScaleFactor = 1.2
             sceneView.session.delegate = self
-            sceneView.automaticallyUpdatesLighting = false
-            sceneView.autoenablesDefaultLighting = false
+            sceneView.automaticallyUpdatesLighting = true
+            sceneView.autoenablesDefaultLighting = true
             sceneView.antialiasingMode = .multisampling4X
             sceneView.preferredFramesPerSecond = 60
             sceneView.backgroundColor = .clear
+
+             if let camera = sceneView.pointOfView?.camera {
+              camera.wantsHDR = true
+              camera.wantsExposureAdaptation = true
+              camera.exposureOffset = -1
+              camera.minimumExposure = -1
+            }
+
             messagesViewModel.delegate = self
             messagesViewModel.createFaceGeometry()
-            messagesViewModel.createRecorder(scene: sceneView)
             messagesViewModel.selectedVirtualContent = .crown
             pickerView.selectRow(0, inComponent: 0, animated: true)
 
@@ -133,7 +138,6 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             }
         }
         resetTracking()
-        videoViewContainer.backgroundColor = .red
     }
 
     func hideComponents() {
@@ -154,6 +158,9 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
 
     @IBAction func record(sender: KYShutterButton) {
+        self.sceneView.scene.rootNode.particleSystems?.forEach { particle in
+            particle.speedFactor = particle.speedFactor / 2.0
+        }
         messagesViewModel.record()
     }
 
@@ -423,11 +430,10 @@ extension MessagesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
         let content = VirtualContentType(rawValue: row)!
         let imageView = UIImageView.init(image: UIImage.init(named: content.imageName))
         imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 7, y: 5, width: 36, height: 36)
+        imageView.frame = CGRect(x: 7, y: 7, width: 36, height: 36)
         imageView.tintColor = UIColor.black
         imageView.contentMode = .scaleToFill
         return imageView
@@ -550,6 +556,9 @@ extension MessagesViewController: MessagesProtocol {
         self.sendButton.isHidden = false
         self.pickerView.isHidden = true
         self.initAnimojiPreview()
+        self.sceneView.scene.rootNode.particleSystems?.forEach { particle in
+            particle.speedFactor = particle.speedFactor * 2.0
+        }
     }
 
     func previewConfigFinished(player: AVPlayer) {

@@ -81,6 +81,11 @@ class VirtualContentUpdater: NSObject, ARSCNViewDelegate {
 
     }
 
+    func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
+     
+        
+    }
+
     func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
         delegate?.didRenderScene()
     }

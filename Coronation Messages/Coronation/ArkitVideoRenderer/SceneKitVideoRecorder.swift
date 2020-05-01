@@ -92,15 +92,17 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
     }
 
     private func prepare(with options: Options) {
-        guard let device = MTLCreateSystemDefaultDevice() else { return }
+        guard let device = sceneView.device else {
+            return
+        }
         self.renderer = SCNRenderer(device: device, options: nil)
         renderer.scene = self.sceneView.scene
-
+        renderer.autoenablesDefaultLighting = true
         initialTime = CMTime.invalid
 
         self.options.videoSize = options.videoSize
 
-        writer = try! AVAssetWriter(outputURL: self.options.videoOnlyUrl, fileType: AVFileType(rawValue: self.options.fileType))
+        writer = try! AVAssetWriter(outputURL: self.options.videoOnlyUrl, fileType: self.options.fileType)
 
         self.setupVideo()
     }

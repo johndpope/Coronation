@@ -22,7 +22,7 @@ class ModelFactory: NSObject {
         nodeForContentType[.crown] = CustomOverlayModel.self
         nodeForContentType[.cashmeoutside] = CustomModel.self
         nodeForContentType[.postMalone] = CustomModel.self
-        dictionaryForContent[.crown] = ["resource": "crown", "mesh": "crown", "scale": 0.038 as Float] as [String: Any]
+        dictionaryForContent[.crown] = ["resource": "crown", "mesh": "crown", "scale": 1 as Float] as [String: Any]
         dictionaryForContent[.cashmeoutside] = ["resource": "catchmeoutside", "mesh": "catchmeoutside", "scale": 0.04 as Float] as [String: Any]
         dictionaryForContent[.postMalone] = ["resource": "postmalone", "mesh": "postmalone", "scale": 0.006 as Float] as [String: Any]
     }
