@@ -81,7 +81,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.layoutIfNeeded()
             }) { (finished) in
-               self.messagesViewModel.createRecorder(scene: self.sceneView)
+                self.messagesViewModel.createRecorder(scene: self.sceneView, isExpanded: self.presentationStyle == .expanded)
             }
         }
     }

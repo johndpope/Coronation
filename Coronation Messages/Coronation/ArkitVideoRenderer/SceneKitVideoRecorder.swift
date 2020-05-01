@@ -96,14 +96,12 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
             return
         }
         self.renderer = SCNRenderer(device: device, options: nil)
+        renderer.isJitteringEnabled = false
         renderer.scene = self.sceneView.scene
         renderer.autoenablesDefaultLighting = true
         initialTime = CMTime.invalid
-
         self.options.videoSize = options.videoSize
-
         writer = try! AVAssetWriter(outputURL: self.options.videoOnlyUrl, fileType: self.options.fileType)
-
         self.setupVideo()
     }
 
