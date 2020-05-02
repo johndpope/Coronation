@@ -419,7 +419,7 @@ extension MessagesViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         let content = VirtualContentType(rawValue: indexPath.item)!
         cell.imageView.contentMode = .scaleAspectFit
-        cell.imageView.image = UIImage(named: content.imageName)
+        cell.imageView.image = UIImage(named: content.imageName)?.withRenderingMode(.alwaysTemplate)
         cell.isSelected = indexPath.item == messagesViewModel.selectedVirtualContent.rawValue
         return cell
     }

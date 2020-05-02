@@ -37,19 +37,27 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         imageView.layer.masksToBounds = true
         imageView.clipsToBounds = true
+        imageView.tintColor = UIColor(red: 240/255, green: 185/255, blue: 180/255, alpha: 1.0)
     }
-    
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.layer.cornerRadius = contentView.frame.size.width / 2
+    }
+
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                imageView.backgroundColor = .clear
-                imageView.layer.borderWidth = 1.0
-                imageView.layer.borderColor = UIColor.lightGray.cgColor
+                contentView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+                contentView.layer.borderColor = UIColor(red: 240/255, green: 185/255, blue: 180/255, alpha: 1.0).cgColor
+                contentView.layer.borderWidth = 1.0
                 contentView.alpha = 1.0
+                contentView.layer.cornerRadius = contentView.frame.size.width / 2
             } else {
-                imageView.backgroundColor = .clear
-                imageView.layer.borderWidth = 0.0
+                contentView.backgroundColor = .clear
+                contentView.layer.borderWidth = 0.0
                 contentView.alpha = 0.5
+                contentView.layer.cornerRadius = contentView.frame.size.width / 2
             }
         }
     }

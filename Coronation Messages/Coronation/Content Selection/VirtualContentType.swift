@@ -8,14 +8,14 @@
 
 enum VirtualContentType: Int {
     case crown
-    case crown2
+    case crown1
 
-    static let orderedValues: [VirtualContentType] = [.crown, .crown2]
+    static let orderedValues: [VirtualContentType] = [.crown, .crown1]
 
     var imageName: String {
         switch self {
-        case .crown: return "crown"
-        case .crown2: return "crown"
+        case .crown: return "ic_crown"
+        case .crown1: return "ic_crown1"
         }
     }
 }
