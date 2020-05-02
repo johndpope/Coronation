@@ -16,18 +16,20 @@ import KYShutterButton
 
 class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
+    @IBOutlet weak var compactStackView: UIStackView!
+    @IBOutlet weak var compactView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var lblDuration: UILabel!
     @IBOutlet weak var recordingImageView: UIImageView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var recordButton: KYShutterButton!
+    @IBOutlet weak var videoViewContainer: AVPlayerView!
+
     @IBOutlet weak var restartExperienceButton: UIButton!
     @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var videoViewContainer: AVPlayerView!
     @IBOutlet weak var sendButton: UIButton!
 
     var isSupported = true
@@ -50,6 +52,11 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     var messagesViewModel = MessagesViewModel()
 
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "statusSegue" {
             self.statusViewController = segue.destination as? StatusViewController
@@ -67,22 +74,12 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     func updateConstraints() {
         if isSupported == true {
             if presentationStyle == .compact {
-                bottomConstraint.constant = 0.0
-                pickerView.isHidden = false
-                collectionView.isHidden = true
                 activityViewController?.dismiss(animated: true, completion: {
 
                 })
-            } else {
-                pickerView.isHidden = true
-                bottomConstraint.constant = 0.0
-                collectionView.isHidden = false
             }
-            UIView.animate(withDuration: 0.2, animations: {
-                self.view.layoutIfNeeded()
-            }) { (finished) in
-                self.messagesViewModel.createRecorder(scene: self.sceneView, isExpanded: self.presentationStyle == .expanded)
-            }
+            collectionView.isHidden = self.presentationStyle == .compact
+            recordButton.isHidden = self.presentationStyle == .compact
         }
     }
 
@@ -94,12 +91,6 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView.setCollectionViewLayout(layout, animated: true)
-        let view = UIView.init()
-        view.frame = CGRect(x: 0, y: (pickerView.bounds.height / 2) - 66, width: 50, height: 50)
-        view.layer.borderColor = Constants.Colors.blueColor.cgColor
-        view.layer.cornerRadius = 5.0
-        view.layer.borderWidth = 2.0
-        pickerView.addSubview(view)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -120,19 +111,15 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             sceneView.antialiasingMode = .multisampling4X
             sceneView.preferredFramesPerSecond = 60
             sceneView.backgroundColor = .clear
-
-             if let camera = sceneView.pointOfView?.camera {
-              camera.wantsHDR = true
-              camera.wantsExposureAdaptation = true
-              camera.exposureOffset = -1
-              camera.minimumExposure = -1
+            if let camera = sceneView.pointOfView?.camera {
+                camera.wantsHDR = true
+                camera.wantsExposureAdaptation = true
+                camera.exposureOffset = -1
+                camera.minimumExposure = -1
             }
-
             messagesViewModel.delegate = self
             messagesViewModel.createFaceGeometry()
             messagesViewModel.selectedVirtualContent = .crown
-            pickerView.selectRow(0, inComponent: 0, animated: true)
-
             statusViewController.restartExperienceHandler = { [weak self] in
                 self?.restartExperience()
             }
@@ -140,9 +127,16 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         resetTracking()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        messagesViewModel.createRecorder(scene: sceneView)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            self.requestPresentationStyle(.expanded)
+        })
+    }
+
     func hideComponents() {
         sceneView.isHidden = true
-        pickerView.isHidden = true
         lblDuration.isHidden = true
         recordingImageView.isHidden = true
         recordButton.isHidden = true
@@ -152,15 +146,11 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         shareButton.isHidden = true
         videoViewContainer.isHidden = true
         sendButton.isHidden = true
-        pickerView.isHidden = true
         collectionView.isHidden = true
     }
 
 
     @IBAction func record(sender: KYShutterButton) {
-        self.sceneView.scene.rootNode.particleSystems?.forEach { particle in
-            particle.speedFactor = particle.speedFactor / 2.0
-        }
         messagesViewModel.record()
     }
 
@@ -203,6 +193,10 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
     func initAnimojiPreview() {
         messagesViewModel.initAnimojiPreview()
+    }
+
+    @IBAction func openUpAction(_ sender: Any) {
+        requestPresentationStyle(.expanded)
     }
 
     @IBAction func shareAction(sender: UIButton) {
@@ -249,8 +243,8 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         ]
         let errorMessage = messages.compactMap({ $0 }).joined(separator: "\n")
 
-        DispatchQueue.main.async {
-            self.displayErrorMessage(title: "The AR session failed.", message: errorMessage)
+        DispatchQueue.main.async { [weak self] in
+            self?.displayErrorMessage(title: "The AR session failed.", message: errorMessage)
         }
     }
 
@@ -259,9 +253,8 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     }
 
     func sessionInterruptionEnded(_ session: ARSession) {
-
-        DispatchQueue.main.async {
-            self.resetTracking()
+        DispatchQueue.main.async { [weak self] in
+            self?.resetTracking()
         }
     }
 
@@ -287,7 +280,6 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         reviewButton.isEnabled = false
         reviewButton.isHidden = true
         videoViewContainer.isHidden = true
-        pickerView.isHidden = true
         downloadButton.isEnabled = false
         downloadButton.isHidden = true
         shareButton.isEnabled = false
@@ -310,8 +302,8 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             self.lblDuration.isHidden = true
             self.reviewButton.isEnabled = true
             self.downloadButton.isEnabled = true
-            self.pickerView.isHidden = self.presentationStyle == .expanded
             self.shareButton.isEnabled = true
+            self.collectionView.isHidden = self.presentationStyle != .expanded
         }
         resetTracking()
     }
@@ -333,68 +325,30 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Conversation Handling
-
-
-    override func willBecomeActive(with conversation: MSConversation) {
-        // Called when the extension is about to move from the inactive to active state.
-        // This will happen when the extension is about to present UI.
-        //conversation.selectedMessage?.url = nil
-
-        //savedConversation = conversation
-        //    safariViewController?.dismiss(animated: true, completion: nil)
-        //    if let url = conversation.selectedMessage?.url {
-        //      safariViewController = SFSafariViewController(url: url)
-        //      present(safariViewController!, animated: true, completion: nil)
-        //    }
-
-    }
-
-
     override func didResignActive(with conversation: MSConversation) {
-        // Called when the extension is about to move from the active to inactive state.
-        // This will happen when the user dissmises the extension, changes to a different
-        // conversation or quits Messages.
         if isSupported == false {
             conversation.selectedMessage?.url = nil
         }
-
-        // Use this method to release shared resources, save user data, invalidate timers,
-        // and store enough state information to restore your extension to its current state
-        // in case it is terminated later.
-    }
-
-
-
-    override func didReceive(_ message: MSMessage, conversation: MSConversation) {
-        // Called when a message arrives that was generated by another instance of this
-        // extension on a remote device.
-
-        // Use this method to trigger UI updates in response to the message.
-    }
-
-    override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
-        // Called when the user taps the send button.
-    }
-
-    override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
-        // Called when the user deletes the message without sending it.
-
-        // Use this to clean up state related to the deleted message.
     }
 
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        // Called before the extension transitions to a new presentation style.
         if self.isSupported == false {
             guard activeConversation != nil else { fatalError("Expected an active converstation") }
+        }
+        restartExperience()
+        UIView.animate(withDuration: 0.2) {
+            self.compactView.alpha = presentationStyle == .expanded ? 0.0:1.0
         }
     }
 
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         updateConstraints()
+        UIView.animate(withDuration: 0.2) {
+            self.compactStackView.alpha = presentationStyle == .expanded ? 0.0:1.0
+        }
     }
 
 }
@@ -474,7 +428,6 @@ extension MessagesViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         messagesViewModel.selectedVirtualContent = VirtualContentType(rawValue: indexPath.item)!
-        pickerView.selectRow(indexPath.row, inComponent: 0, animated: true)
     }
 }
 
@@ -532,6 +485,7 @@ extension MessagesViewController: MessagesProtocol {
         restartExperienceButton.isHidden = true
         reviewButton.isHidden = true
         downloadButton.isHidden = true
+        collectionView.isHidden = true
         shareButton.isHidden = true
         lblDuration.isHidden = false
         lblDuration.text = "00:00"
@@ -539,7 +493,6 @@ extension MessagesViewController: MessagesProtocol {
         recordButton.buttonState = .recording
         sendButton.isHidden = true
         recordButton.isHidden = false
-        pickerView.isHidden = true
         restartExperienceButton.setImage(UIImage(named: "ic_rescan"), for: UIControl.State.normal)
     }
 
@@ -554,11 +507,7 @@ extension MessagesViewController: MessagesProtocol {
         self.shareButton.isHidden = false
         self.recordButton.isHidden = true
         self.sendButton.isHidden = false
-        self.pickerView.isHidden = true
         self.initAnimojiPreview()
-        self.sceneView.scene.rootNode.particleSystems?.forEach { particle in
-            particle.speedFactor = particle.speedFactor * 2.0
-        }
     }
 
     func previewConfigFinished(player: AVPlayer) {
@@ -574,17 +523,16 @@ extension MessagesViewController: MessagesProtocol {
         session.pause()
         statusViewController.view.isHidden = true
         reviewButton.isEnabled = false
-        pickerView.isHidden = true
         downloadButton.isEnabled = true
         shareButton.isEnabled = true
     }
 
     func modelChanged() {
-        pickerView.reloadAllComponents()
         collectionView.reloadData()
     }
     
     func trackingStatus(tracked: Bool) {
+        
         DispatchQueue.main.async { [weak self] in
             if tracked {
                 self?.statusViewController.hideMessage()

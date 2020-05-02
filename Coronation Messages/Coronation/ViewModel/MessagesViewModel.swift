@@ -47,14 +47,9 @@ class MessagesViewModel: NSObject {
         modelFactory.createFaceGeometry()
     }
     
-    func createRecorder(scene: ARSCNView, isExpanded: Bool) {
-        let scale = scene.frame.width / scene.frame.height
-        var size = CGSize(width: 640, height: 640 / scale)
-        if isExpanded {
-            size = CGSize(width: 1080, height: 1920)
-        }
+    func createRecorder(scene: ARSCNView) {
         let option = SceneKitVideoRecorder.Options(timeScale: 1000,
-                                                   videoSize: size,
+                                                   videoSize: CGSize(width: 1080, height: 1920),
                                                    fps: 60,
                                                    outputUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "output.mov"),
                                                    audioOnlyUrl: URL(fileURLWithPath: NSTemporaryDirectory() + "audio.m4a"),

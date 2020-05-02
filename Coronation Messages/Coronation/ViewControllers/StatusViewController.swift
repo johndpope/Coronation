@@ -46,7 +46,7 @@ class StatusViewController: UIViewController {
 
         if autoHide {
             // Seconds before fade out. Adjust if the app needs longer transient messages.
-            let displayDuration: TimeInterval = 6
+            let displayDuration: TimeInterval = 3
             messageHideTimer = Timer.scheduledTimer(withTimeInterval: displayDuration, repeats: false, block: { [weak self] _ in
                 self?.showHideMessage(hide: true, animated: true)
             })
