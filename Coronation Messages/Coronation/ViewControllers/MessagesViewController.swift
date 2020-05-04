@@ -51,11 +51,13 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
     var messagesViewModel = MessagesViewModel()
 
+    private var impactFeedbackgenerator: UIImpactFeedbackGenerator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .heavy)
+        impactFeedbackgenerator?.prepare()
     }
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "statusSegue" {
@@ -353,54 +355,6 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
 }
 
-extension MessagesViewController {
-    // MARK: - UIScrollViewDelegate
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //collectionView.animateVisibleCells()
-    }
-}
-
-
-
-extension MessagesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        pickerView.subviews.forEach({
-            $0.isHidden = $0.frame.height < 1.0
-        })
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return VirtualContentType.orderedValues.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 50.0
-    }
-
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 50.0
-    }
-
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let content = VirtualContentType(rawValue: row)!
-        let imageView = UIImageView.init(image: UIImage.init(named: content.imageName))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 7, y: 7, width: 36, height: 36)
-        imageView.tintColor = UIColor.black
-        imageView.contentMode = .scaleToFill
-        return imageView
-    }
-
-    // MARK: UIPickerViewDelegate
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        messagesViewModel.selectedVirtualContent = VirtualContentType(rawValue: row)!
-        collectionView.selectItem(at: IndexPath.init(row: row, section: 0), animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredVertically)
-    }
-
-}
-
 extension MessagesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     // MARK: - UICollectionViewDataSource
@@ -428,6 +382,8 @@ extension MessagesViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         messagesViewModel.selectedVirtualContent = VirtualContentType(rawValue: indexPath.item)!
+        impactFeedbackgenerator?.impactOccurred()
+        impactFeedbackgenerator?.prepare()
     }
 }
 
@@ -437,21 +393,21 @@ extension MessagesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
+        return 0.0
     }
 
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
     }
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
+        return 0.0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width / 3) - 20, height: (collectionView.frame.width / 3) - 20)
+        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }
 }
 
