@@ -89,9 +89,9 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
         }
         faceGeometry.update(from: faceAnchor.geometry)
         let max = faceGeometry.boundingBox.max
-        let scalar: Float = 1.35
-        occlusionNode?.scale = SCNVector3Make(1.15, 1.15, 1.15)
+        let scalar: Float = 1.3
         nodeMesh?.scale = SCNVector3Make(max.z * scalar, max.z * scalar, max.z * scalar * 1.2)
+        occlusionNode?.scale = SCNVector3Make(1.15, 1.15, 1.15)
         contentNode.position.y = faceGeometry.boundingSphere.radius * 0.96
         contentNode.position.z = -faceGeometry.boundingSphere.radius / 2
     }
