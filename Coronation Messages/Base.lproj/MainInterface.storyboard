@@ -37,6 +37,9 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-KF-VJ8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p89-JO-arG" userLabel="Add Object Button" customClass="KYShutterButton" customModule="KYShutterButton">
                                 <rect key="frame" x="155.66666666666666" y="682" width="64" height="64"/>
                                 <constraints>
@@ -58,6 +61,12 @@
                                     <action selector="recordWithSender:" destination="g5d-an-QTn" eventType="touchUpInside" id="yaw-SW-7m9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold to record!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaI-uj-Tp0">
+                                <rect key="frame" x="132.66666666666666" y="754" width="110" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikj-HT-Pnv">
                                 <rect key="frame" x="70" y="763" width="235" height="15"/>
                                 <constraints>
@@ -68,7 +77,7 @@
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azJ-ek-FdQ">
-                                <rect key="frame" x="187.66666666666666" y="754" width="0.0" height="0.0"/>
+                                <rect key="frame" x="187.66666666666666" y="754" width="0.0" height="18"/>
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_record" translatesAutoresizingMaskIntoConstraints="NO" id="8Az-aY-flL">
                                         <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
@@ -237,13 +246,20 @@
                             <constraint firstItem="XqK-1k-eWc" firstAttribute="bottom" secondItem="p89-JO-arG" secondAttribute="bottom" id="34T-Pk-bvY"/>
                             <constraint firstItem="S0t-fO-4sf" firstAttribute="bottom" secondItem="XqK-1k-eWc" secondAttribute="bottom" id="4SA-WF-6Gy"/>
                             <constraint firstItem="R5C-U4-kfy" firstAttribute="leading" secondItem="5Rd-gx-ed4" secondAttribute="leading" id="5Ud-Yc-ZL9"/>
+                            <constraint firstItem="rDv-KF-VJ8" firstAttribute="leading" secondItem="R5C-U4-kfy" secondAttribute="leading" id="6be-Xz-BDj"/>
                             <constraint firstItem="TFv-mz-jhP" firstAttribute="centerY" secondItem="R5C-U4-kfy" secondAttribute="centerY" id="8Cw-Kx-AzZ"/>
                             <constraint firstAttribute="trailing" secondItem="PLN-Pa-Ryj" secondAttribute="trailing" id="95W-Xr-OR0"/>
                             <constraint firstItem="TFv-mz-jhP" firstAttribute="width" secondItem="R5C-U4-kfy" secondAttribute="width" id="9cR-mq-TTC"/>
+                            <constraint firstItem="PaI-uj-Tp0" firstAttribute="centerY" secondItem="azJ-ek-FdQ" secondAttribute="centerY" id="BDh-yX-e3Q"/>
                             <constraint firstItem="Lki-nq-8sK" firstAttribute="leading" secondItem="5Rd-gx-ed4" secondAttribute="leading" constant="16" id="Boe-w9-xpL"/>
                             <constraint firstItem="p89-JO-arG" firstAttribute="centerX" secondItem="d4O-sJ-J6f" secondAttribute="centerX" id="Deu-xv-Kp5"/>
+                            <constraint firstItem="rDv-KF-VJ8" firstAttribute="centerY" secondItem="R5C-U4-kfy" secondAttribute="centerY" id="EJU-vI-wBY"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="R5C-U4-kfy" secondAttribute="trailing" id="Ec7-id-Rfa"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="Ikj-HT-Pnv" secondAttribute="trailing" constant="70" id="ErK-w4-nj8"/>
+                            <constraint firstItem="PaI-uj-Tp0" firstAttribute="height" secondItem="azJ-ek-FdQ" secondAttribute="height" id="I2j-O7-hnb"/>
+                            <constraint firstItem="rDv-KF-VJ8" firstAttribute="trailing" secondItem="R5C-U4-kfy" secondAttribute="trailing" id="IPS-aa-35J"/>
+                            <constraint firstItem="PaI-uj-Tp0" firstAttribute="centerX" secondItem="azJ-ek-FdQ" secondAttribute="centerX" id="Kdj-uH-FMQ"/>
+                            <constraint firstItem="rDv-KF-VJ8" firstAttribute="height" secondItem="R5C-U4-kfy" secondAttribute="height" id="KgF-PR-nHZ"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="bottom" secondItem="p89-JO-arG" secondAttribute="bottom" constant="32" id="MdT-v8-33p"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="KNl-yZ-C5l" secondAttribute="trailing" constant="16" id="N8s-AC-iUQ"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="CJg-31-viV" secondAttribute="trailing" constant="16" id="Q1m-2u-Jby"/>
@@ -256,6 +272,8 @@
                             <constraint firstItem="TFv-mz-jhP" firstAttribute="height" secondItem="R5C-U4-kfy" secondAttribute="height" id="Xnz-RK-Zxw"/>
                             <constraint firstItem="KNl-yZ-C5l" firstAttribute="leading" secondItem="d4O-sJ-J6f" secondAttribute="leading" constant="16" id="Y0K-D6-crc"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="XqK-1k-eWc" secondAttribute="trailing" constant="16" id="bK5-Ba-Woa"/>
+                            <constraint firstItem="rDv-KF-VJ8" firstAttribute="centerX" secondItem="R5C-U4-kfy" secondAttribute="centerX" id="cfz-ir-9nV"/>
+                            <constraint firstItem="rDv-KF-VJ8" firstAttribute="width" secondItem="R5C-U4-kfy" secondAttribute="width" id="dsV-BB-jRH"/>
                             <constraint firstItem="CJg-31-viV" firstAttribute="top" secondItem="R5C-U4-kfy" secondAttribute="top" constant="18" id="kIg-Yy-Z0X"/>
                             <constraint firstItem="PLN-Pa-Ryj" firstAttribute="leading" secondItem="d4O-sJ-J6f" secondAttribute="leading" id="m0x-yS-AZa"/>
                             <constraint firstItem="TFv-mz-jhP" firstAttribute="leading" secondItem="R5C-U4-kfy" secondAttribute="leading" id="q37-nu-BoM"/>
@@ -276,7 +294,9 @@
                         <outlet property="compactStackView" destination="Qh5-iF-oE4" id="nDz-Gs-vPb"/>
                         <outlet property="compactView" destination="PLN-Pa-Ryj" id="ftW-WS-0FQ"/>
                         <outlet property="downloadButton" destination="c2x-D9-cl1" id="kXv-ZL-ha0"/>
+                        <outlet property="holdToRecordLabel" destination="PaI-uj-Tp0" id="dbu-wA-nBW"/>
                         <outlet property="lblDuration" destination="2c5-ya-tvS" id="Dvg-sa-YOh"/>
+                        <outlet property="previewImageView" destination="rDv-KF-VJ8" id="sQb-j5-Vfn"/>
                         <outlet property="recordButton" destination="p89-JO-arG" id="Ipi-R2-Swm"/>
                         <outlet property="recordingImageView" destination="8Az-aY-flL" id="nHq-ed-ZpL"/>
                         <outlet property="restartExperienceButton" destination="CJg-31-viV" id="Btl-z3-vgW"/>

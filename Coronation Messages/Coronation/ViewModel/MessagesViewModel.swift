@@ -73,7 +73,7 @@ class MessagesViewModel: NSObject {
         self.isRecording = false
         delegate?.recordFinished()
     }
-    
+
     func record() {
         if self.isRecording == false {
             startRecording()

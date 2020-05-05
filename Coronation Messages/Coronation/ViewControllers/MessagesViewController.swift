@@ -31,9 +31,15 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
-
+    @IBOutlet weak var previewImageView: UIImageView!
+    
+    @IBOutlet weak var holdToRecordLabel: UILabel!
     var isSupported = true
     var activityViewController: UIActivityViewController?
+
+    private var isPictureMode: Bool {
+        return !previewImageView.isHidden
+    }
 
     var isRestartExperienceButtonEnabled: Bool {
         get { return restartExperienceButton.isEnabled }
@@ -55,8 +61,47 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(recording(gesture:)))
+        longPress.minimumPressDuration = 1.0
+        recordButton.addGestureRecognizer(longPress)
         impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .heavy)
         impactFeedbackgenerator?.prepare()
+        updateConstraints()
+        configCollectionAndPicker()
+        if !ARFaceTrackingConfiguration.isSupported {
+            isSupported = false
+            hideComponents()
+        } else {
+            let configuration = ARFaceTrackingConfiguration()
+            configuration.isLightEstimationEnabled = true
+            configuration.worldAlignment = .camera
+            let session = ARSession()
+            sceneView.session = session
+            session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+            sceneView.allowsCameraControl = false
+            sceneView.delegate = messagesViewModel.contentUpdater
+            sceneView.contentMode = .scaleAspectFit
+            sceneView.contentScaleFactor = 1.2
+            sceneView.session.delegate = self
+            sceneView.automaticallyUpdatesLighting = true
+            sceneView.autoenablesDefaultLighting = true
+            sceneView.antialiasingMode = .multisampling4X
+            sceneView.preferredFramesPerSecond = 60
+            sceneView.backgroundColor = .clear
+            //            if let camera = sceneView.pointOfView?.camera {
+            //                camera.wantsHDR = true
+            //                camera.wantsExposureAdaptation = true
+            //                camera.exposureOffset = -1
+            //                camera.minimumExposure = -1
+            //            }
+            messagesViewModel.delegate = self
+            messagesViewModel.createFaceGeometry()
+            messagesViewModel.selectedVirtualContent = .crown
+            statusViewController.restartExperienceHandler = { [weak self] in
+                self?.restartExperience()
+            }
+        }
+        resetTracking()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,6 +127,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             }
             collectionView.isHidden = self.presentationStyle == .compact
             recordButton.isHidden = self.presentationStyle == .compact
+            holdToRecordLabel.isHidden = self.presentationStyle == .compact
         }
     }
 
@@ -93,40 +139,6 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView.setCollectionViewLayout(layout, animated: true)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateConstraints()
-        configCollectionAndPicker()
-        if !ARFaceTrackingConfiguration.isSupported {
-            isSupported = false
-            hideComponents()
-        } else {
-            sceneView.allowsCameraControl = false
-            sceneView.delegate = messagesViewModel.contentUpdater
-            sceneView.contentMode = .scaleAspectFit
-            sceneView.contentScaleFactor = 1.2
-            sceneView.session.delegate = self
-            sceneView.automaticallyUpdatesLighting = true
-            sceneView.autoenablesDefaultLighting = true
-            sceneView.antialiasingMode = .multisampling4X
-            sceneView.preferredFramesPerSecond = 60
-            sceneView.backgroundColor = .clear
-            if let camera = sceneView.pointOfView?.camera {
-                camera.wantsHDR = true
-                camera.wantsExposureAdaptation = true
-                camera.exposureOffset = -1
-                camera.minimumExposure = -1
-            }
-            messagesViewModel.delegate = self
-            messagesViewModel.createFaceGeometry()
-            messagesViewModel.selectedVirtualContent = .crown
-            statusViewController.restartExperienceHandler = { [weak self] in
-                self?.restartExperience()
-            }
-        }
-        resetTracking()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -142,39 +154,68 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         lblDuration.isHidden = true
         recordingImageView.isHidden = true
         recordButton.isHidden = true
+        holdToRecordLabel.isHidden = true
         restartExperienceButton.isHidden = true
         reviewButton.isHidden = true
         downloadButton.isHidden = true
         shareButton.isHidden = true
         videoViewContainer.isHidden = true
+        previewImageView.isHidden = true
         sendButton.isHidden = true
         collectionView.isHidden = true
     }
 
 
     @IBAction func record(sender: KYShutterButton) {
-        messagesViewModel.record()
+        previewImageView.image = sceneView.snapshot()
+        pictureTaken()
     }
 
 
-    @IBAction func sendAtachment(sender: AnyObject) {
-        guard let url = messagesViewModel.lastUrlVideo else {
-            return
+    @objc func recording(gesture: UILongPressGestureRecognizer) {
+        impactFeedbackgenerator?.impactOccurred()
+        impactFeedbackgenerator?.prepare()
+        if gesture.state == UIGestureRecognizer.State.began {
+            messagesViewModel.record()
+        } else {
+            messagesViewModel.record()
         }
+    }
+
+    @IBAction func sendAtachment(sender: AnyObject) {
+
         if Reachability.isConnectedToNetwork() {
-            self.activeConversation?.sendAttachment(url, withAlternateFilename: url.lastPathComponent, completionHandler: { [weak self] (error) in
-                let alertController = UIAlertController(title: "Success", message: "Your message was sent with success.", preferredStyle: .alert)
-                self?.present(alertController, animated: true, completion: nil)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                    alertController.dismiss(animated: true, completion: nil)
+            if isPictureMode {
+                let message = MSMessage()
+                let layout = MSMessageTemplateLayout()
+                layout.image = previewImageView.image
+                message.layout = layout
+                self.activeConversation?.send(message, completionHandler: { [weak self] (error) in
+                    let alertController = UIAlertController(title: "Success", message: "Your message was sent with success.", preferredStyle: .alert)
+                    self?.present(alertController, animated: true, completion: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                        alertController.dismiss(animated: true, completion: nil)
+                    })
                 })
-            })
+            } else {
+                guard let url = messagesViewModel.lastUrlVideo else {
+                    return
+                }
+                self.activeConversation?.sendAttachment(url, withAlternateFilename: url.lastPathComponent, completionHandler: { [weak self] (error) in
+                    let alertController = UIAlertController(title: "Success", message: "Your message was sent with success.", preferredStyle: .alert)
+                    self?.present(alertController, animated: true, completion: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                        alertController.dismiss(animated: true, completion: nil)
+                    })
+                })
+            }
         } else {
             let alertController = UIAlertController(title: "Warning", message: "Check your internet connection.", preferredStyle: .alert)
             present(alertController, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                 alertController.dismiss(animated: true, completion: nil)
             })
+
         }
     }
 
@@ -190,7 +231,23 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     }
 
     @IBAction func download(sender: UIButton) {
-        messagesViewModel.download()
+        if let image = previewImageView.image, isPictureMode {
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        } else {
+            messagesViewModel.download()
+        }
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
 
     func initAnimojiPreview() {
@@ -202,15 +259,24 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     }
 
     @IBAction func shareAction(sender: UIButton) {
-        guard let url = messagesViewModel.lastUrlVideo else {
-            return
+        if isPictureMode {
+            requestPresentationStyle(.expanded)
+            activityViewController = UIActivityViewController(
+                activityItems: [previewImageView.image as AnyObject],
+                applicationActivities: nil)
+            present(activityViewController!, animated: true, completion: nil)
+        } else {
+            guard let url = messagesViewModel.lastUrlVideo else {
+                return
+            }
+            requestPresentationStyle(.expanded)
+            activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            present(activityViewController!, animated: true, completion: nil)
         }
-        requestPresentationStyle(.expanded)
-        activityViewController = UIActivityViewController(
-            activityItems: [url],
-            applicationActivities: nil)
-        present(activityViewController!, animated: true, completion: nil)
     }
+
 
     @IBAction func reviewLastVideo(sender: UIButton) {
         if videoViewContainer.isHidden == true {
@@ -265,7 +331,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         statusViewController.showMessage("Starting new session")
         guard ARFaceTrackingConfiguration.isSupported else { return }
         let configuration = ARFaceTrackingConfiguration()
-        configuration.isLightEstimationEnabled = false
+        configuration.isLightEstimationEnabled = true
         configuration.worldAlignment = .camera
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
@@ -278,10 +344,12 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         isRestartExperienceButtonEnabled = false
         recordButton.isEnabled = false
         sendButton.isEnabled = false
+        sendButton.isHidden = true
         statusViewController.view.isHidden = false
         reviewButton.isEnabled = false
         reviewButton.isHidden = true
         videoViewContainer.isHidden = true
+        previewImageView.isHidden = true
         downloadButton.isEnabled = false
         downloadButton.isHidden = true
         shareButton.isEnabled = false
@@ -294,13 +362,16 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             }
             self.isRestartExperienceButtonEnabled = true
             self.videoViewContainer.isHidden = true
+            self.previewImageView.isHidden = true
             self.recordButton.isEnabled = true
             self.sendButton.isEnabled = true
             self.recordButton.isHidden = false
+            self.holdToRecordLabel.isHidden = false
             self.messagesViewModel.lastUrlVideo = nil
             self.sendButton.isHidden = true
             self.reviewButton.isHidden = true
             self.videoViewContainer.isHidden = true
+            self.previewImageView.isHidden = true
             self.lblDuration.isHidden = true
             self.reviewButton.isEnabled = true
             self.downloadButton.isEnabled = true
@@ -449,10 +520,12 @@ extension MessagesViewController: MessagesProtocol {
         recordButton.buttonState = .recording
         sendButton.isHidden = true
         recordButton.isHidden = false
+        holdToRecordLabel.isHidden = false
         restartExperienceButton.setImage(UIImage(named: "ic_rescan"), for: UIControl.State.normal)
     }
 
     func recordFinished() {
+        self.previewImageView.isHidden = true
         self.recordButton.buttonState = .normal
         self.lblDuration.isHidden = true
         self.lblDuration.text = "00:00"
@@ -462,6 +535,7 @@ extension MessagesViewController: MessagesProtocol {
         self.downloadButton.isHidden = false
         self.shareButton.isHidden = false
         self.recordButton.isHidden = true
+        self.holdToRecordLabel.isHidden = true
         self.sendButton.isHidden = false
         self.initAnimojiPreview()
     }
@@ -472,6 +546,22 @@ extension MessagesViewController: MessagesProtocol {
         }
         castedLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         castedLayer.player = player
+    }
+
+    func pictureTaken() {
+        previewImageView.isHidden = false
+        recordingImageView.isHidden = true
+        recordButton.buttonState = .normal
+        lblDuration.isHidden = true
+        lblDuration.text = "00:00"
+        recordingImageView.isHidden = true
+        restartExperienceButton.isHidden = false
+        reviewButton.isHidden = true
+        downloadButton.isHidden = false
+        shareButton.isHidden = false
+        recordButton.isHidden = true
+        holdToRecordLabel.isHidden = true
+        sendButton.isHidden = false
     }
 
     func previewStarted() {
