@@ -173,11 +173,11 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
 
 
     @objc func recording(gesture: UILongPressGestureRecognizer) {
-        impactFeedbackgenerator?.impactOccurred()
-        impactFeedbackgenerator?.prepare()
         if gesture.state == UIGestureRecognizer.State.began {
+            impactFeedbackgenerator?.impactOccurred()
+            impactFeedbackgenerator?.prepare()
             messagesViewModel.record()
-        } else {
+        } else if gesture.state == UIGestureRecognizer.State.ended {
             messagesViewModel.record()
         }
     }
@@ -516,15 +516,16 @@ extension MessagesViewController: MessagesProtocol {
         shareButton.isHidden = true
         lblDuration.isHidden = false
         lblDuration.text = "00:00"
+        holdToRecordLabel.isHidden = true
         recordingImageView.isHidden = false
         recordButton.buttonState = .recording
         sendButton.isHidden = true
         recordButton.isHidden = false
-        holdToRecordLabel.isHidden = false
         restartExperienceButton.setImage(UIImage(named: "ic_rescan"), for: UIControl.State.normal)
     }
 
     func recordFinished() {
+        self.holdToRecordLabel.isHidden = true
         self.previewImageView.isHidden = true
         self.recordButton.buttonState = .normal
         self.lblDuration.isHidden = true
@@ -535,7 +536,6 @@ extension MessagesViewController: MessagesProtocol {
         self.downloadButton.isHidden = false
         self.shareButton.isHidden = false
         self.recordButton.isHidden = true
-        self.holdToRecordLabel.isHidden = true
         self.sendButton.isHidden = false
         self.initAnimojiPreview()
     }
