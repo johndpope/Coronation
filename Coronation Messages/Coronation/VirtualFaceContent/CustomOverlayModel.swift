@@ -69,16 +69,12 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
         occlusionNode.renderingOrder = -1
         contentNode?.addChildNode(occlusionNode)
         contentNode?.addChildNode(nodeMesh)
+        nodeMesh.scale = SCNVector3Make(faceGeometry.boundingSphere.radius,faceGeometry.boundingSphere.radius, faceGeometry.boundingSphere.radius)
         #endif
         return contentNode
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let faceGeometry = occlusionNode?.geometry as? ARSCNFaceGeometry,
-            let faceAnchor = anchor as? ARFaceAnchor
-            else { return }
-        
-        faceGeometry.update(from: faceAnchor.geometry)
         update(withFaceAnchor: anchor as! ARFaceAnchor)
     }
 
@@ -88,11 +84,7 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
             return
         }
         faceGeometry.update(from: faceAnchor.geometry)
-        let max = faceGeometry.boundingBox.max
-        let scalar: Float = 1.3
-        nodeMesh?.scale = SCNVector3Make(max.z * scalar, max.z * scalar, max.z * scalar * 1.2)
-        occlusionNode?.scale = SCNVector3Make(1.15, 1.15, 1.15)
-        contentNode.position.y = faceGeometry.boundingSphere.radius * 0.96
+        contentNode.position.y = faceGeometry.boundingSphere.radius
         contentNode.position.z = -faceGeometry.boundingSphere.radius / 2
     }
 

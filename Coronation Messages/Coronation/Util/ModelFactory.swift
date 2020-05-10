@@ -21,8 +21,10 @@ class ModelFactory: NSObject {
     func createFaceGeometry() {
         nodeForContentType[.crown] = CustomOverlayModel.self
         nodeForContentType[.crown1] = CustomOverlayModel.self
+        nodeForContentType[.crown2] = CustomOverlayModel.self
         dictionaryForContent[.crown] = ["resource": "crown", "mesh": "crown", "scale": 1 as Float] as [String: Any]
         dictionaryForContent[.crown1] = ["resource": "crown2", "mesh": "crown2", "scale": 1 as Float] as [String: Any]
+        dictionaryForContent[.crown2] = ["resource": "crown3", "mesh": "crown3", "scale": 1 as Float] as [String: Any]
     }
 
     func getModel(type: VirtualContentType) -> VirtualFaceNode? {
