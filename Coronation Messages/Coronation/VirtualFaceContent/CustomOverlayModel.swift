@@ -85,7 +85,8 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
         }
         faceGeometry.update(from: faceAnchor.geometry)
         contentNode.position.y = faceGeometry.boundingSphere.radius
-        contentNode.position.z = -faceGeometry.boundingSphere.radius / 2
+        occlusionNode?.position.y = -faceGeometry.boundingSphere.radius
+        //contentNode.position.z = -faceGeometry.boundingSphere.radius / 2
     }
 
 }
