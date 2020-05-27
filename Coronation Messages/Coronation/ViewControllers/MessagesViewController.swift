@@ -137,7 +137,8 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clear
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.setCollectionViewLayout(layout, animated: true)
     }
 
@@ -478,7 +479,7 @@ extension MessagesViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.height)
     }
 }
 

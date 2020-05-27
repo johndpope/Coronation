@@ -69,7 +69,7 @@ class CustomOverlayModel: SCNReferenceNode, VirtualFaceContent, VirtualContentCo
         occlusionNode.renderingOrder = -1
         contentNode?.addChildNode(occlusionNode)
         contentNode?.addChildNode(nodeMesh)
-        nodeMesh.scale = SCNVector3Make(faceGeometry.boundingSphere.radius,faceGeometry.boundingSphere.radius, faceGeometry.boundingSphere.radius)
+        nodeMesh.scale = SCNVector3Make(faceGeometry.boundingSphere.radius * 0.9, faceGeometry.boundingSphere.radius * 0.9, faceGeometry.boundingSphere.radius * 0.9)
         #endif
         return contentNode
     }
