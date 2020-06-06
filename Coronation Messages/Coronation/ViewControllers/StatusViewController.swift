@@ -66,7 +66,6 @@ class StatusViewController: UIViewController {
 			messageLabel.isHidden = hide
 			return
 		}
-		
 		UIView.animate(withDuration: 0.2, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
             self.messageLabel.isHidden = hide
             self.updateMessagePanelVisibility()

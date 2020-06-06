@@ -11,7 +11,7 @@ import ARKit
 
 protocol MessagesProtocol {
     func modelChanged()
-    func trackingStatus(tracked: Bool)
+    func trackingStatus(tracked: Bool, message: String)
     func durationChanged(duration: CMTime)
     func recordStarted()
     func recordFinished()
@@ -133,7 +133,7 @@ class MessagesViewModel: NSObject {
 
 extension MessagesViewModel: ContentUpdaterDelegate {
     func trackingStatus(tracked: Bool) {
-        delegate?.trackingStatus(tracked: tracked)
+        delegate?.trackingStatus(tracked: tracked, message: tracked ? "Tap for photo, hold for video.":"Please bring your face into the view")
     }
 
     func didRenderScene() {

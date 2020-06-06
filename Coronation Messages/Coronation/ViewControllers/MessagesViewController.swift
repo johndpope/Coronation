@@ -33,7 +33,6 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var previewImageView: UIImageView!
     
-    @IBOutlet weak var holdToRecordLabel: UILabel!
     var isSupported = true
     var activityViewController: UIActivityViewController?
 
@@ -88,12 +87,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             sceneView.antialiasingMode = .multisampling4X
             sceneView.preferredFramesPerSecond = 60
             sceneView.backgroundColor = .clear
-            //            if let camera = sceneView.pointOfView?.camera {
-            //                camera.wantsHDR = true
-            //                camera.wantsExposureAdaptation = true
-            //                camera.exposureOffset = -1
-            //                camera.minimumExposure = -1
-            //            }
+            sceneView.layer.cornerRadius = 12.0
             messagesViewModel.delegate = self
             messagesViewModel.createFaceGeometry()
             messagesViewModel.selectedVirtualContent = .crown
@@ -127,7 +121,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             }
             collectionView.isHidden = self.presentationStyle == .compact
             recordButton.isHidden = self.presentationStyle == .compact
-            holdToRecordLabel.isHidden = self.presentationStyle == .compact
+            statusViewController.view.isHidden = self.presentationStyle == .compact
         }
     }
 
@@ -155,7 +149,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
         lblDuration.isHidden = true
         recordingImageView.isHidden = true
         recordButton.isHidden = true
-        holdToRecordLabel.isHidden = true
+        statusViewController.view.isHidden = true
         restartExperienceButton.isHidden = true
         reviewButton.isHidden = true
         downloadButton.isHidden = true
@@ -367,7 +361,7 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             self.recordButton.isEnabled = true
             self.sendButton.isEnabled = true
             self.recordButton.isHidden = false
-            self.holdToRecordLabel.isHidden = false
+            self.statusViewController.view.isHidden = false
             self.messagesViewModel.lastUrlVideo = nil
             self.sendButton.isHidden = true
             self.reviewButton.isHidden = true
@@ -461,25 +455,18 @@ extension MessagesViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension MessagesViewController: UICollectionViewDelegateFlowLayout {
 
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
-    }
-
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        return UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
     }
+
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 16.0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.height)
+        return CGSize(width: 72, height: 72)
     }
 }
 
@@ -517,7 +504,7 @@ extension MessagesViewController: MessagesProtocol {
         shareButton.isHidden = true
         lblDuration.isHidden = false
         lblDuration.text = "00:00"
-        holdToRecordLabel.isHidden = true
+        statusViewController.view.isHidden = true
         recordingImageView.isHidden = false
         recordButton.buttonState = .recording
         sendButton.isHidden = true
@@ -526,7 +513,7 @@ extension MessagesViewController: MessagesProtocol {
     }
 
     func recordFinished() {
-        self.holdToRecordLabel.isHidden = true
+        self.statusViewController.view.isHidden = true
         self.previewImageView.isHidden = true
         self.recordButton.buttonState = .normal
         self.lblDuration.isHidden = true
@@ -538,6 +525,7 @@ extension MessagesViewController: MessagesProtocol {
         self.shareButton.isHidden = false
         self.recordButton.isHidden = true
         self.sendButton.isHidden = false
+        self.statusViewController.view.isHidden = true
         self.initAnimojiPreview()
     }
 
@@ -561,8 +549,9 @@ extension MessagesViewController: MessagesProtocol {
         downloadButton.isHidden = false
         shareButton.isHidden = false
         recordButton.isHidden = true
-        holdToRecordLabel.isHidden = true
+        statusViewController.view.isHidden = true
         sendButton.isHidden = false
+        statusViewController.view.isHidden = true
     }
 
     func previewStarted() {
@@ -578,14 +567,10 @@ extension MessagesViewController: MessagesProtocol {
         collectionView.reloadData()
     }
     
-    func trackingStatus(tracked: Bool) {
+    func trackingStatus(tracked: Bool, message: String) {
         
         DispatchQueue.main.async { [weak self] in
-            if tracked {
-                self?.statusViewController.hideMessage()
-            } else {
-                self?.statusViewController.showMessage("Please bring your face into the view", autoHide: false)
-            }
+            self?.statusViewController.showMessage(message, autoHide: false)
         }
     }
 }
