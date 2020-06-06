@@ -37,11 +37,13 @@
 		7F15D720245A1AE5001949EA /* UnsupportedDeviceMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6FB245A1AE5001949EA /* UnsupportedDeviceMessageViewController.swift */; };
 		7F15D721245A1AE5001949EA /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6FC245A1AE5001949EA /* MessagesViewController.swift */; };
 		7F15D722245A1AE5001949EA /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6FD245A1AE5001949EA /* StatusViewController.swift */; };
-		7F15D723245A1AE5001949EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D6FF245A1AE5001949EA /* Constants.swift */; };
-		7F15D724245A1AE5001949EA /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15D701245A1AE5001949EA /* MyCollectionViewCell.swift */; };
 		7F15D725245A1AE5001949EA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F15D703245A1AE5001949EA /* MainInterface.storyboard */; };
 		7F15D726245A1AE5001949EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F15D705245A1AE5001949EA /* Assets.xcassets */; };
 		7F15D727245A1AE5001949EA /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F15D706245A1AE5001949EA /* Models.scnassets */; };
+		7FE5DC44248BFC3300D587E8 /* StatusAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5DC37248BFB6300D587E8 /* StatusAlert.swift */; };
+		7FE5DC45248BFC3300D587E8 /* StatusAlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5DC38248BFB6300D587E8 /* StatusAlertUtils.swift */; };
+		7FE5DC46248BFC3300D587E8 /* UIDevice+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5DC39248BFB6300D587E8 /* UIDevice+Blur.swift */; };
+		7FE5DC47248BFC3300D587E8 /* UIDevice+Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5DC3A248BFB6300D587E8 /* UIDevice+Platform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,11 +104,13 @@
 		7F15D6FB245A1AE5001949EA /* UnsupportedDeviceMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsupportedDeviceMessageViewController.swift; sourceTree = "<group>"; };
 		7F15D6FC245A1AE5001949EA /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		7F15D6FD245A1AE5001949EA /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
-		7F15D6FF245A1AE5001949EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7F15D701245A1AE5001949EA /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F15D704245A1AE5001949EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		7F15D705245A1AE5001949EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F15D706245A1AE5001949EA /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		7FE5DC37248BFB6300D587E8 /* StatusAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusAlert.swift; path = Sources/StatusAlert/StatusAlert.swift; sourceTree = "<group>"; };
+		7FE5DC38248BFB6300D587E8 /* StatusAlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusAlertUtils.swift; path = Sources/StatusAlert/StatusAlertUtils.swift; sourceTree = "<group>"; };
+		7FE5DC39248BFB6300D587E8 /* UIDevice+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIDevice+Blur.swift"; path = "Sources/StatusAlert/Extensions/UIDevice+Blur.swift"; sourceTree = "<group>"; };
+		7FE5DC3A248BFB6300D587E8 /* UIDevice+Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIDevice+Platform.swift"; path = "Sources/StatusAlert/Extensions/UIDevice+Platform.swift"; sourceTree = "<group>"; };
 		B38237FD79DE22B44C4CE27B /* Pods_Coronation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coronation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B704DB11BD1131A9DB9B9661 /* Pods-Coronation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronation.release.xcconfig"; path = "Target Support Files/Pods-Coronation/Pods-Coronation.release.xcconfig"; sourceTree = "<group>"; };
 		D67456BFB7C726D5BBE14869 /* Pods_Coronation_Messages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coronation_Messages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +182,6 @@
 			children = (
 				7F15D705245A1AE5001949EA /* Assets.xcassets */,
 				7F15D702245A1AE5001949EA /* Base.lproj */,
-				7F15D6FE245A1AE5001949EA /* Controllers */,
 				7F15D6DA245A1AE4001949EA /* Info.plist */,
 				7F15D706245A1AE5001949EA /* Models.scnassets */,
 				7F15D6DB245A1AE4001949EA /* Coronation */,
@@ -224,6 +227,7 @@
 		7F15D6E4245A1AE4001949EA /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7FE5DC43248BFB6300D587E8 /* StatusAlert */,
 				7F15D6E5245A1AE4001949EA /* PickerView.swift */,
 				7F15D6E6245A1AE4001949EA /* ModelFactory.swift */,
 				7F15D6E7245A1AE4001949EA /* Extensions.swift */,
@@ -274,29 +278,23 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7F15D6FE245A1AE5001949EA /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7F15D6FF245A1AE5001949EA /* Constants.swift */,
-				7F15D700245A1AE5001949EA /* Cell */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7F15D700245A1AE5001949EA /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				7F15D701245A1AE5001949EA /* MyCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		7F15D702245A1AE5001949EA /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
 				7F15D703245A1AE5001949EA /* MainInterface.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		7FE5DC43248BFB6300D587E8 /* StatusAlert */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5DC37248BFB6300D587E8 /* StatusAlert.swift */,
+				7FE5DC38248BFB6300D587E8 /* StatusAlertUtils.swift */,
+				7FE5DC39248BFB6300D587E8 /* UIDevice+Blur.swift */,
+				7FE5DC3A248BFB6300D587E8 /* UIDevice+Platform.swift */,
+			);
+			path = StatusAlert;
 			sourceTree = "<group>";
 		};
 		C3914BE8B17F97B25A298E2F /* Pods */ = {
@@ -480,15 +478,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE5DC44248BFC3300D587E8 /* StatusAlert.swift in Sources */,
+				7FE5DC45248BFC3300D587E8 /* StatusAlertUtils.swift in Sources */,
+				7FE5DC46248BFC3300D587E8 /* UIDevice+Blur.swift in Sources */,
+				7FE5DC47248BFC3300D587E8 /* UIDevice+Platform.swift in Sources */,
 				7F15D713245A1AE5001949EA /* AVPlayerView.swift in Sources */,
 				7F15D719245A1AE5001949EA /* CustomOverlayModel.swift in Sources */,
-				7F15D724245A1AE5001949EA /* MyCollectionViewCell.swift in Sources */,
 				7F15D70C245A1AE5001949EA /* Error.swift in Sources */,
 				7F15D714245A1AE5001949EA /* PhotosUtil.swift in Sources */,
 				7F15D71F245A1AE5001949EA /* ContentSelectionController.swift in Sources */,
 				7F15D711245A1AE5001949EA /* Extensions.swift in Sources */,
 				7F15D721245A1AE5001949EA /* MessagesViewController.swift in Sources */,
-				7F15D723245A1AE5001949EA /* Constants.swift in Sources */,
 				7F15D70D245A1AE5001949EA /* SceneKitVideoRecorder.swift in Sources */,
 				7F15D722245A1AE5001949EA /* StatusViewController.swift in Sources */,
 				7F15D716245A1AE5001949EA /* UIImage+VideoRender.swift in Sources */,

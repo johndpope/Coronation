@@ -61,11 +61,12 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(recording(gesture:)))
-        longPress.minimumPressDuration = 1.0
+        longPress.minimumPressDuration = 0.8
         recordButton.addGestureRecognizer(longPress)
         impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .heavy)
         impactFeedbackgenerator?.prepare()
         updateConstraints()
+        configAlert()
         configCollectionAndPicker()
         if !ARFaceTrackingConfiguration.isSupported {
             isSupported = false
@@ -120,12 +121,18 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
                 })
             }
             collectionView.isHidden = self.presentationStyle == .compact
-            recordButton.isHidden = self.presentationStyle == .compact
             statusViewController.view.isHidden = self.presentationStyle == .compact
         }
     }
 
+    func configAlert() {
+        StatusAlert.Appearance.common.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        StatusAlert.Appearance.common.tintColor = UIColor(red: 0.941, green: 0.725, blue: 0.706, alpha: 1)
+        StatusAlert.Appearance.common.blurStyle = .dark
+    }
+
     func configCollectionAndPicker() {
+
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -185,23 +192,23 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
                 let layout = MSMessageTemplateLayout()
                 layout.image = previewImageView.image
                 message.layout = layout
-                self.activeConversation?.send(message, completionHandler: { [weak self] (error) in
-                    let alertController = UIAlertController(title: "Success", message: "Your message was sent with success.", preferredStyle: .alert)
-                    self?.present(alertController, animated: true, completion: nil)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                        alertController.dismiss(animated: true, completion: nil)
-                    })
+                self.activeConversation?.send(message, completionHandler: { (error) in
+                    let statusAlert = StatusAlert()
+                    statusAlert.image = UIImage(named: "ic_checkmark")
+                    statusAlert.title = "Sent"
+                    statusAlert.canBePickedOrDismissed = true
+                    statusAlert.show(in: self.view)
                 })
             } else {
                 guard let url = messagesViewModel.lastUrlVideo else {
                     return
                 }
-                self.activeConversation?.sendAttachment(url, withAlternateFilename: url.lastPathComponent, completionHandler: { [weak self] (error) in
-                    let alertController = UIAlertController(title: "Success", message: "Your message was sent with success.", preferredStyle: .alert)
-                    self?.present(alertController, animated: true, completion: nil)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                        alertController.dismiss(animated: true, completion: nil)
-                    })
+                self.activeConversation?.sendAttachment(url, withAlternateFilename: url.lastPathComponent, completionHandler: { (error) in
+                    let statusAlert = StatusAlert()
+                    statusAlert.image = UIImage(named: "ic_checkmark")
+                    statusAlert.title = "Sent"
+                    statusAlert.canBePickedOrDismissed = true
+                    statusAlert.show(in: self.view)
                 })
             }
         } else {
@@ -239,9 +246,11 @@ class MessagesViewController: MSMessagesAppViewController, ARSessionDelegate {
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+            let statusAlert = StatusAlert()
+            statusAlert.image = UIImage(named: "ic_checkmark")
+            statusAlert.title = "Saved"
+            statusAlert.canBePickedOrDismissed = true
+            statusAlert.show(in: view)
         }
     }
 
@@ -487,13 +496,11 @@ extension MessagesViewController: MessagesProtocol {
     }
 
     func animojiDownloaded() {
-        let alert = UIAlertController(title: "Success",
-                                      message: "MymixEmoji saved on your library",
-                                      preferredStyle: .alert)
-        self.present(alert, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            alert.dismiss(animated: true, completion: nil)
-        }
+        let statusAlert = StatusAlert()
+        statusAlert.image = UIImage(named: "ic_checkmark")
+        statusAlert.title = "Saved"
+        statusAlert.canBePickedOrDismissed = true
+        statusAlert.show(in: view)
     }
 
     func recordStarted() {
