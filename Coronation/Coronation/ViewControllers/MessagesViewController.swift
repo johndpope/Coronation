@@ -411,16 +411,11 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     private func requestPresentationStyle(_ style: PresentationStyle) {
         presentationStyle = style
         restartExperience()
+        updateConstraints()
         UIView.animate(withDuration: 0.2) {
             self.compactView.alpha = self.presentationStyle == .expanded ? 0.0:1.0
-        } completion: { (_) in
-            self.updateConstraints()
-            UIView.animate(withDuration: 0.2) {
-                self.compactStackView.alpha = self.presentationStyle == .expanded ? 0.0:1.0
-            }
         }
     }
-    
 }
 
 extension MessagesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
