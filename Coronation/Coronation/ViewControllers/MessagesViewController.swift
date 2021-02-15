@@ -36,6 +36,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var previewImageView: UIImageView!
     
     var isSupported = true
@@ -264,6 +265,9 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
 
     @IBAction func openUpAction(_ sender: Any) {
        requestPresentationStyle(.expanded)
+    }
+    
+    @IBAction func infoButton(_ sender: Any) {
     }
 
     @IBAction func shareAction(sender: UIButton) {

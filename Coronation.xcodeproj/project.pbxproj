@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1A3F7025D6CFC3005699CF /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1A3F6F25D6CFC3005699CF /* InformationViewController.swift */; };
+		0F1A3F9525D6E5E2005699CF /* apercu-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F8D25D6E5E0005699CF /* apercu-webfont.ttf */; };
+		0F1A3F9625D6E5E2005699CF /* apercu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F8E25D6E5E0005699CF /* apercu.ttf */; };
+		0F1A3F9725D6E5E2005699CF /* apercu-mono-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F8F25D6E5E0005699CF /* apercu-mono-webfont.ttf */; };
+		0F1A3F9825D6E5E2005699CF /* apercu-light-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F9025D6E5E1005699CF /* apercu-light-webfont.ttf */; };
+		0F1A3F9925D6E5E2005699CF /* apercu-medium-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F9125D6E5E1005699CF /* apercu-medium-webfont.ttf */; };
+		0F1A3F9A25D6E5E2005699CF /* apercu-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F9225D6E5E1005699CF /* apercu-bold.ttf */; };
+		0F1A3F9B25D6E5E2005699CF /* apercu-bolditalic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F9325D6E5E1005699CF /* apercu-bolditalic-webfont.ttf */; };
+		0F1A3F9C25D6E5E2005699CF /* apercu-bold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A3F9425D6E5E2005699CF /* apercu-bold-webfont.ttf */; };
 		712414CD25C57D5D0019A3BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712414CC25C57D5D0019A3BA /* AppDelegate.swift */; };
 		712414CF25C57D5D0019A3BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712414CE25C57D5D0019A3BA /* SceneDelegate.swift */; };
 		712414D625C57D5D0019A3BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712414D525C57D5D0019A3BA /* Assets.xcassets */; };
@@ -68,6 +77,15 @@
 
 /* Begin PBXFileReference section */
 		02D935932D36107A2D4103FF /* Pods-Coronation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coronation.release.xcconfig"; path = "Target Support Files/Pods-Coronation/Pods-Coronation.release.xcconfig"; sourceTree = "<group>"; };
+		0F1A3F6F25D6CFC3005699CF /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = /Users/emmateo/Desktop/Coronation/Coronation/Coronation/ViewControllers/InformationViewController.swift; sourceTree = "<absolute>"; };
+		0F1A3F8D25D6E5E0005699CF /* apercu-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-webfont.ttf"; sourceTree = "<group>"; };
+		0F1A3F8E25D6E5E0005699CF /* apercu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = apercu.ttf; sourceTree = "<group>"; };
+		0F1A3F8F25D6E5E0005699CF /* apercu-mono-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-mono-webfont.ttf"; sourceTree = "<group>"; };
+		0F1A3F9025D6E5E1005699CF /* apercu-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-light-webfont.ttf"; sourceTree = "<group>"; };
+		0F1A3F9125D6E5E1005699CF /* apercu-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-medium-webfont.ttf"; sourceTree = "<group>"; };
+		0F1A3F9225D6E5E1005699CF /* apercu-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-bold.ttf"; sourceTree = "<group>"; };
+		0F1A3F9325D6E5E1005699CF /* apercu-bolditalic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-bolditalic-webfont.ttf"; sourceTree = "<group>"; };
+		0F1A3F9425D6E5E2005699CF /* apercu-bold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-bold-webfont.ttf"; sourceTree = "<group>"; };
 		1691C14B0B19E88900451A39 /* Pods-CoronationStandalone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronationStandalone.debug.xcconfig"; path = "Target Support Files/Pods-CoronationStandalone/Pods-CoronationStandalone.debug.xcconfig"; sourceTree = "<group>"; };
 		712414C925C57D5D0019A3BA /* Coronation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coronation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		712414CC25C57D5D0019A3BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +163,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1A3F7C25D6E50C005699CF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0F1A3F9425D6E5E2005699CF /* apercu-bold-webfont.ttf */,
+				0F1A3F9225D6E5E1005699CF /* apercu-bold.ttf */,
+				0F1A3F9325D6E5E1005699CF /* apercu-bolditalic-webfont.ttf */,
+				0F1A3F9025D6E5E1005699CF /* apercu-light-webfont.ttf */,
+				0F1A3F9125D6E5E1005699CF /* apercu-medium-webfont.ttf */,
+				0F1A3F8F25D6E5E0005699CF /* apercu-mono-webfont.ttf */,
+				0F1A3F8D25D6E5E0005699CF /* apercu-webfont.ttf */,
+				0F1A3F8E25D6E5E0005699CF /* apercu.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6A5FC32EC086E4455924198B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +192,7 @@
 		712414C025C57D5D0019A3BA = {
 			isa = PBXGroup;
 			children = (
+				0F1A3F7C25D6E50C005699CF /* Fonts */,
 				712414CB25C57D5D0019A3BA /* Coronation */,
 				712414E225C57D5D0019A3BA /* CoronationTests */,
 				712414ED25C57D5E0019A3BA /* CoronationUITests */,
@@ -329,6 +363,7 @@
 		7124154C25C57FBD0019A3BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F1A3F6F25D6CFC3005699CF /* InformationViewController.swift */,
 				7124154D25C57FBD0019A3BA /* UnsupportedDeviceMessageViewController.swift */,
 				7124154E25C57FBD0019A3BA /* MessagesViewController.swift */,
 				7124154F25C57FBD0019A3BA /* StatusViewController.swift */,
@@ -458,11 +493,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1A3F9525D6E5E2005699CF /* apercu-webfont.ttf in Resources */,
+				0F1A3F9625D6E5E2005699CF /* apercu.ttf in Resources */,
 				7124159025C584B80019A3BA /* LaunchScreen.storyboard in Resources */,
+				0F1A3F9C25D6E5E2005699CF /* apercu-bold-webfont.ttf in Resources */,
+				0F1A3F9B25D6E5E2005699CF /* apercu-bolditalic-webfont.ttf in Resources */,
+				0F1A3F9A25D6E5E2005699CF /* apercu-bold.ttf in Resources */,
 				7124156525C57FBD0019A3BA /* CollectionViewCell.xib in Resources */,
 				7124155925C57FBD0019A3BA /* README.md in Resources */,
+				0F1A3F9925D6E5E2005699CF /* apercu-medium-webfont.ttf in Resources */,
 				7124155825C57FBD0019A3BA /* LICENSE in Resources */,
+				0F1A3F9825D6E5E2005699CF /* apercu-light-webfont.ttf in Resources */,
 				7124159125C584B80019A3BA /* Main.storyboard in Resources */,
+				0F1A3F9725D6E5E2005699CF /* apercu-mono-webfont.ttf in Resources */,
 				712414D625C57D5D0019A3BA /* Assets.xcassets in Resources */,
 				7124158725C581440019A3BA /* Models.scnassets in Resources */,
 			);
@@ -544,6 +587,7 @@
 				7124156025C57FBD0019A3BA /* AVPlayerView.swift in Sources */,
 				7124155F25C57FBD0019A3BA /* Reachability.swift in Sources */,
 				7124156B25C57FBD0019A3BA /* ContentSelectionController.swift in Sources */,
+				0F1A3F7025D6CFC3005699CF /* InformationViewController.swift in Sources */,
 				712414CD25C57D5D0019A3BA /* AppDelegate.swift in Sources */,
 				7124156925C57FBD0019A3BA /* CustomModel.swift in Sources */,
 				7124155725C57FBD0019A3BA /* ModelFactory.swift in Sources */,
@@ -746,14 +790,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VATK4AU6F6;
+				DEVELOPMENT_TEAM = SQAH2BS42Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Coronation/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KingKingKing.CoronationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = KingKingKing.CoronationApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -767,14 +811,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VATK4AU6F6;
+				DEVELOPMENT_TEAM = SQAH2BS42Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Coronation/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KingKingKing.CoronationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = KingKingKing.CoronationApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

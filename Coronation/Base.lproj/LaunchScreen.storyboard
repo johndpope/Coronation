@@ -22,19 +22,28 @@
                                     <constraint firstAttribute="width" secondItem="Wrt-fR-RbF" secondAttribute="height" multiplier="1:1" id="13y-jd-jGh"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KINGS AND QUEENS ARE NO LONGER BORN, THEY'RE MADE." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqi-et-2nL">
+                                <rect key="frame" x="108" y="601" width="199" height="62.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.72549019607843135" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wrt-fR-RbF" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="DZN-Ga-7uZ"/>
                             <constraint firstItem="Wrt-fR-RbF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="J5V-8v-QhB"/>
+                            <constraint firstItem="Vqi-et-2nL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="LEX-i8-HL1"/>
                             <constraint firstItem="Wrt-fR-RbF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="acV-Cz-fGI"/>
+                            <constraint firstItem="Vqi-et-2nL" firstAttribute="top" secondItem="Wrt-fR-RbF" secondAttribute="bottom" constant="49.5" id="rFg-mY-VHx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vqi-et-2nL" secondAttribute="trailing" constant="107" id="xl1-tq-iAN"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
