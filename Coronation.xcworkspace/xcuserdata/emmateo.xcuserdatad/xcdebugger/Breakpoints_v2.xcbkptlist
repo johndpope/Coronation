@@ -14,8 +14,8 @@
             filePath = "Coronation/Coronation/ViewControllers/MessagesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "openUpAction(_:)"
             landmarkType = "7">
          </BreakpointContent>

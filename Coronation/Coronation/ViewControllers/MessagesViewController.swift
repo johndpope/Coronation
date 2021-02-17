@@ -54,6 +54,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     }
 
     var statusViewController: StatusViewController!
+    var unsupportedDeviceMessageViewController: UnsupportedDeviceMessageViewController?
 
     // MARK: Properties
 
@@ -106,7 +107,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
         }
         resetTracking()
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "statusSegue" {
             self.statusViewController = segue.destination as? StatusViewController
@@ -154,6 +155,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         messagesViewModel.createRecorder(scene: sceneView)
+        performSegue(withIdentifier: "unsupportedSegue", sender: nil)
     }
 
     func hideComponents() {
@@ -354,6 +356,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     func restartExperience() {
         // Disable Restart button for a while in order to give the session enough time to restart.
         isRestartExperienceButtonEnabled = false
+        restartExperienceButton.isHidden = true
         recordButton.isEnabled = false
         sendButton.isEnabled = false
         sendButton.isHidden = true

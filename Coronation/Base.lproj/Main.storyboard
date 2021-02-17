@@ -324,6 +324,7 @@ No one else is going to put that crown on your head, so do it yourself.</string>
                             <constraint firstItem="PLN-Pa-Ryj" firstAttribute="centerX" secondItem="d4O-sJ-J6f" secondAttribute="centerX" id="zcL-kx-Qkh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hO0-JG-pC6"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="MdT-v8-33p" id="Frn-pS-viC"/>
                         <outlet property="collectionView" destination="KNl-yZ-C5l" id="EfY-bp-XQL"/>
@@ -340,6 +341,7 @@ No one else is going to put that crown on your head, so do it yourself.</string>
                         <outlet property="sendButton" destination="XqK-1k-eWc" id="2Gv-Yr-61v"/>
                         <outlet property="shareButton" destination="Q1B-HA-iYj" id="QyJ-dW-lcv"/>
                         <outlet property="videoViewContainer" destination="TFv-mz-jhP" id="fwV-NW-DyT"/>
+                        <segue destination="rLV-8f-tUw" kind="presentation" identifier="unsupportedSegue" modalPresentationStyle="fullScreen" id="5Dd-yX-Jfh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ip8-vj-ITl" sceneMemberID="firstResponder"/>
@@ -382,6 +384,7 @@ Shipping apps must support devices without face tracking. In your app, offer UI 
                             <constraint firstItem="8BS-eg-dDh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zMM-UO-n4P" secondAttribute="leading" constant="20" symbolic="YES" id="zfc-JO-610"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uaW-c3-rQB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDS-pM-MYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +453,7 @@ Shipping apps must support devices without face tracking. In your app, offer UI 
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-AN-nP8">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333334"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wh7-cB-4gy">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Tracking status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1J-rb-6QX" userLabel="Messages label">
