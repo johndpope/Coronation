@@ -23,13 +23,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>AR Camera</string>
+	<string>Crown yourself!</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Audiovisual Recording</string>
+	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Export AR Media</string>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Export AR Media</string>
+	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

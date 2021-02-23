@@ -155,7 +155,9 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         messagesViewModel.createRecorder(scene: sceneView)
-        performSegue(withIdentifier: "unsupportedSegue", sender: nil)
+        if !ARFaceTrackingConfiguration.isSupported {
+            performSegue(withIdentifier: "unsupportedSegue", sender: nil)
+        }
     }
 
     func hideComponents() {

@@ -21,6 +21,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <viewLayoutGuide key="safeArea" id="nNG-7Y-Ftf"/>
                             </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-6C-DkN">
+                                <rect key="frame" x="10" y="44" width="79" height="30"/>
+                                <state key="normal" title="Information">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoButton:" destination="g5d-an-QTn" eventType="touchUpInside" id="7LX-Ye-86o"/>
+                                    <segue destination="QEQ-RR-AIO" kind="presentation" id="sK4-eo-Qo7"/>
+                                </connections>
+                            </button>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KNl-yZ-C5l">
                                 <rect key="frame" x="16" y="574" width="358" height="88"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -259,16 +269,6 @@ No one else is going to put that crown on your head, so do it yourself.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-6C-DkN">
-                                <rect key="frame" x="10" y="44" width="79" height="30"/>
-                                <state key="normal" title="Information">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="infoButton:" destination="g5d-an-QTn" eventType="touchUpInside" id="7LX-Ye-86o"/>
-                                    <segue destination="QEQ-RR-AIO" kind="presentation" id="sK4-eo-Qo7"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Rd-gx-ed4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -440,20 +440,20 @@ Shipping apps must support devices without face tracking. In your app, offer UI 
         <scene sceneID="bR7-Dk-QoQ">
             <objects>
                 <viewController storyboardIdentifier="StatusViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZUA-eM-dyl" customClass="StatusViewController" customModule="Coronation" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="rRi-u8-COX">
+                    <view key="view" contentMode="scaleToFill" id="rRi-u8-COX">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="25"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="xVI-Gr-pf6" userLabel="Message Panel">
+                            <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVI-Gr-pf6" userLabel="Message Panel">
                                 <rect key="frame" x="0.0" y="44" width="390" height="14"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mLx-QW-DXM">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="mLx-QW-DXM">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="14"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-AN-nP8">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333334"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="14.666666666666666"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wh7-cB-4gy">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="15"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Tracking status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1J-rb-6QX" userLabel="Messages label">
