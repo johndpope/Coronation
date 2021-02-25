@@ -30,6 +30,17 @@
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>apercu.ttf</string>
+		<string>apercu-webfont.ttf</string>
+		<string>apercu-mono-webfont.ttf</string>
+		<string>apercu-medium-webfont.ttf</string>
+		<string>apercu-light-webfont.ttf</string>
+		<string>apercu-bolditalic-webfont.ttf</string>
+		<string>apercu-bold.ttf</string>
+		<string>apercu-bold-webfont.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -62,17 +73,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>apercu.ttf</string>
-		<string>apercu-webfont.ttf</string>
-		<string>apercu-mono-webfont.ttf</string>
-		<string>apercu-medium-webfont.ttf</string>
-		<string>apercu-light-webfont.ttf</string>
-		<string>apercu-bolditalic-webfont.ttf</string>
-		<string>apercu-bold.ttf</string>
-		<string>apercu-bold-webfont.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

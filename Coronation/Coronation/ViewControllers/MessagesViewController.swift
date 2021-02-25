@@ -373,7 +373,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
         shareButton.isHidden = true
         restartExperienceButton.setImage(UIImage(named: "ic_rescan"), for: UIControl.State.normal)
         messagesViewModel.restartExperience()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
             guard let `self` = self else {
                 return
             }

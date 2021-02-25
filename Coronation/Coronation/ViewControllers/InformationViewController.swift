@@ -1,8 +1,8 @@
 //
 //  InformationViewController.swift
-//  
+//  Coronation
 //
-//  Created by Emma Teo on 2021-02-12.
+//  Created by Ulrika Alm on 2021-02-24.
 //
 
 import UIKit
