@@ -112,6 +112,11 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
         if segue.identifier == "statusSegue" {
             self.statusViewController = segue.destination as? StatusViewController
         }
+        if segue.identifier == "informationSegue" {
+            let vc = segue.destination as? InformationViewController
+            
+            vc?.selectedCrown = messagesViewModel.selectedVirtualContent
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -276,7 +281,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
 
     @IBAction func shareAction(sender: UIButton) {
         if isPictureMode {
-            requestPresentationStyle(.expanded)
+            //requestPresentationStyle(.expanded)
             activityViewController = UIActivityViewController(
                 activityItems: [previewImageView.image as AnyObject],
                 applicationActivities: nil)
@@ -285,7 +290,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
             guard let url = messagesViewModel.lastUrlVideo else {
                 return
             }
-           requestPresentationStyle(.expanded)
+           //requestPresentationStyle(.expanded)
             activityViewController = UIActivityViewController(
                 activityItems: [url],
                 applicationActivities: nil)

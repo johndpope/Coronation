@@ -8,12 +8,23 @@
 import UIKit
 
 class InformationViewController: UIViewController {
+    
+    var selectedCrown: VirtualContentType?
+    
+    @IBOutlet var titleLabel: UILabel?
+    
+    private func updateView() {
+        titleLabel?.text = selectedCrown?.title
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
+        
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*

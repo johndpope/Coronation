@@ -22,4 +22,12 @@ enum VirtualContentType: Int {
         case .crown3: return "ic_crown3"
         }
     }
+    var title: String {
+        switch self {
+        case .crown: return "ic_crown"
+        case .crown1: return "ic_crown1"
+        case .crown2: return "ic_crown2"
+        case .crown3: return "ic_crown3"
+        }
+    }
 }
