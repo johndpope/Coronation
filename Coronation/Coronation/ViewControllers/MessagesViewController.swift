@@ -122,6 +122,7 @@ class MessagesViewController: UIViewController, ARSessionDelegate {
     override func viewDidDisappear(_ animated: Bool) {
 
     }
+    
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
