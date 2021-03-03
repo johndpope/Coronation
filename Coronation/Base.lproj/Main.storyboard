@@ -445,16 +445,16 @@ Shipping apps must support devices without face tracking. In your app, offer UI 
                         <rect key="frame" x="0.0" y="0.0" width="390" height="25"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVI-Gr-pf6" userLabel="Message Panel">
-                                <rect key="frame" x="0.0" y="44" width="390" height="14"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="mLx-QW-DXM">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="14"/>
+                            <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="xVI-Gr-pf6" userLabel="Message Panel">
+                                <rect key="frame" x="0.0" y="44" width="390" height="14.333333333333336"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mLx-QW-DXM">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333336"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-AN-nP8">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="14"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333334"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wh7-cB-4gy">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="14.333333333333334"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Tracking status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1J-rb-6QX" userLabel="Messages label">
