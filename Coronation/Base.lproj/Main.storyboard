@@ -25,11 +25,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-6C-DkN">
-                                <rect key="frame" x="10" y="44" width="79" height="30"/>
-                                <state key="normal" title="Information">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-6C-DkN">
+                                <rect key="frame" x="10" y="44" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69641608434007662" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Nge-RJ-r0H"/>
+                                    <constraint firstAttribute="height" constant="48" id="wSy-qp-Ssj"/>
+                                </constraints>
+                                <state key="normal" image="ic_info">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="infoButton:" destination="g5d-an-QTn" eventType="touchUpInside" id="7LX-Ye-86o"/>
                                     <segue destination="QEQ-RR-AIO" kind="presentation" identifier="informationSegue" id="sK4-eo-Qo7"/>
@@ -219,10 +229,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oe3-Kw-sW2">
-                                        <rect key="frame" x="66" y="80" width="258.33333333333331" height="603.33333333333337"/>
+                                        <rect key="frame" x="66" y="80" width="258" height="603.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowns 1 (2)" id="miS-xy-R9W">
-                                                <rect key="frame" x="0.0" y="0.0" width="258.33333333333331" height="442.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="258" height="442.33333333333331"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KINGS AND QUEENS ARE NO LONGER BORN, THEY´RE MADE." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fav-kO-b8i">
@@ -232,7 +242,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2h-YB-Rbz">
-                                                <rect key="frame" x="49.333333333333314" y="563.33333333333337" width="160" height="40"/>
+                                                <rect key="frame" x="49" y="563.33333333333337" width="160" height="40"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="PqJ-fU-KF5"/>
@@ -281,7 +291,7 @@
                             <constraint firstItem="7KH-Kb-Fi1" firstAttribute="centerX" secondItem="azJ-ek-FdQ" secondAttribute="centerX" id="Dgr-1k-JPV"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="Ikj-HT-Pnv" secondAttribute="trailing" id="ErK-w4-nj8"/>
                             <constraint firstItem="HcJ-6C-DkN" firstAttribute="leading" secondItem="5Rd-gx-ed4" secondAttribute="leading" constant="10" id="GfK-0i-ucV"/>
-                            <constraint firstItem="CJg-31-viV" firstAttribute="leading" secondItem="HcJ-6C-DkN" secondAttribute="trailing" constant="237" id="HaZ-Wp-Pco"/>
+                            <constraint firstItem="CJg-31-viV" firstAttribute="leading" secondItem="HcJ-6C-DkN" secondAttribute="trailing" constant="268" id="HaZ-Wp-Pco"/>
                             <constraint firstItem="7KH-Kb-Fi1" firstAttribute="width" secondItem="azJ-ek-FdQ" secondAttribute="width" multiplier="1.5" id="Hjr-rM-WZL"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="bottom" secondItem="p89-JO-arG" secondAttribute="bottom" constant="52" id="MdT-v8-33p"/>
                             <constraint firstItem="5Rd-gx-ed4" firstAttribute="trailing" secondItem="KNl-yZ-C5l" secondAttribute="trailing" constant="16" id="N8s-AC-iUQ"/>
@@ -496,6 +506,7 @@ Shipping apps must support devices without face tracking. In your app, offer UI 
     </designables>
     <resources>
         <image name="crowns 1 (2)" width="356" height="315"/>
+        <image name="ic_info" width="24" height="24"/>
         <image name="ic_record" width="16" height="16"/>
         <image name="ic_rescan" width="20" height="18.666666030883789"/>
         <image name="ic_review" width="17.333333969116211" height="20"/>
